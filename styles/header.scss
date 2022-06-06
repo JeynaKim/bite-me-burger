@@ -31,10 +31,10 @@
   font-family: 'Gochi Hand', cursive;
 }
 
-.sidebar-burger-logo{
+.sidebar-burger-logo {
   width: 27px;
   margin: 10px;
-  text-align: center;;
+  text-align: center;
 }
 
 .logo-name {
@@ -49,14 +49,13 @@
   font-family: 'Caveat', cursive;
 }
 
-
 .boxes {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.boxes .box{
+.boxes .box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,5 +67,5 @@
 }
 
 .box2 {
-margin-left: 20%;
+  margin-left: 20%;
 }
