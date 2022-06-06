@@ -1,0 +1,46 @@
+.container {
+  background-color: #f8f9fa;
+  width: 100%;
+  min-height: 100vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.nav-bar {
+  background-color: #ffff;
+  border: 1px solid black;
+  width: 100%;
+  align-items: center;
+}
+
+.burger-logo {
+  width: 80px;
+  cursor: pointer;
+  margin: 15px;
+  text-align: center;
+}
+
+.logo-text {
+  font-family: 'Gochi Hand', cursive;
+}
+
+.sidebar-burger-logo{
+  width: 27px;
+  margin: 10px;
+  text-align: center;;
+}
+
+.logo-name {
+  text-align: center;
+}
+
+.logo-text {
+  font-family: 'Gochi Hand', cursive;
+}
+
+.menu-text {
+  font-family: 'Caveat', cursive;
+}
