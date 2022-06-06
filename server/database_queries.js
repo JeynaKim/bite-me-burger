@@ -22,7 +22,7 @@ const allMenuItems = function () {
 // Add item to user's cart
 // Parameters come from user menu input
 const addItemToCart = function (item, quantity) {
- return pool.query(`
+  return pool.query(`
   INSERT INTO order_items(items_id, quantity)
   VALUES(
     SELECT id
@@ -44,7 +44,7 @@ const addItemToCart = function (item, quantity) {
 
 // View items in user's cart
 const viewCart = function () {
- return pool.query(`
+  return pool.query(`
   SELECT item_photo_url, item_name, price, quantity
   FROM items
   JOIN order_items
@@ -79,7 +79,7 @@ const addItemToMenu = function (price, itemName, itemPhotoURL) {
 }
 
 // After order finalization, order is sent to ADMIN
-const getOrders = function() {
+const getOrders = function () {
   return pool.query(`
   SELECT whole_name, created_at, items_id, order_id, quantity
   FROM orders
@@ -88,28 +88,28 @@ const getOrders = function() {
   WHERE order_complete = false
   GROUP BY order_id
   `)
-  .then(res => {
-    return res;
-  })
-  .catch(err => {
-    console.log(`Error: ${err}`);
-  })
+    .then(res => {
+      return res;
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
+    })
 }
 
 // Restaurant marks order as complete
-const orderComplete = function(orderID) {
+const orderComplete = function (orderID) {
   return pool.query(`
   UPDATE orders
   SET order_complete = true
   WHERE id = ${orderID}
   `)
-  .then(res => {
-    console.log(`Order ${orderID} complete!`);
-    return res;
-  })
-  .catch(err => {
-    console.log(`Error: ${err}`);
-  })
+    .then(res => {
+      console.log(`Order ${orderID} complete!`);
+      return res;
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
+    })
 }
 
 
