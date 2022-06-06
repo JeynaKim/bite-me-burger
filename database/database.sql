@@ -3,7 +3,7 @@ CREATE TABLE users (
   whole_name VARCHAR(255) NOT NULL,
   phone_number VARCHAR(20) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  is_admin BOOLEAN DEFAULT FALSE
+  is_admin BOOLEAN DEFAULT false
 );
 
 CREATE TABLE items (
@@ -16,12 +16,12 @@ CREATE TABLE items (
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   users_id INTEGER,
-  order_status TEXT,
+  order_complete BOOLEAN DEFAULT false,
   created_at TIMESTAMP,
   estimate_time_minute INTEGER DEFAULT 25,
   started_at TIMESTAMP,
   completed_at TIMESTAMP,
-  bill_paid BOOLEAN DEFAULT TRUE,
+  bill_paid BOOLEAN DEFAULT true,
   message TEXT,
   FOREIGN KEY (users_id) REFERENCES users(id)
 );
