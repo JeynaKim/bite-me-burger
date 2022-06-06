@@ -23,6 +23,10 @@
   text-align: center;
 }
 
+.category-burger-icon {
+  width: 50px;
+}
+
 .logo-text {
   font-family: 'Gochi Hand', cursive;
 }
@@ -43,4 +47,26 @@
 
 .menu-text {
   font-family: 'Caveat', cursive;
+}
+
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxes .box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 90px;
+  padding: 15px 20px;
+  background-color: #f4d35e;
+}
+
+.box2 {
+margin-left: 20%;
 }
