@@ -1,172 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Bite Me Burger</title>
 
-<head>
-  <title>Bite Me Burger</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
 
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Bootstrap CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Boxicon Library -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Boxicon Library -->
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awesome library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
-  <!-- Font Awesome library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Fonts Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts Selection -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <!--Header-->
-  <div class="container">
-    <div class="nav-bar">
-      <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo">
-      <h2 class="logo-text">Bite Me Burger</h2>
-    </div>
-
-  <!--Menu Category-->
-  <div class="menu-category">
-    <h3 class="menu-category-text">Menu Category</h3>
-    <div class="boxes">
-      <div class="box box1">
-        <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png" class="category-burger-icon">
-        <span class="text">Burger</span>
+  <body>
+    <!--Header-->
+    <div class="container custom-container">
+      <div class="nav-bar">
+        <img
+          src="https://pic.onlinewebfonts.com/svg/img_485179.png"
+          class="burger-logo"
+        />
+        <h2 class="logo-text">Bite Me Burger</h2>
       </div>
 
-      <div class="box box2">
-        <img src="https://cdn-icons-png.flaticon.com/512/575/575595.png" class="category-burger-icon">
-        <span class="text">Drinks</span>
-      </div>
-    </div>
-  </div>
+      <!--Menu Category-->
+      <div class="menu-category">
+        <h3 class="menu-category-text">Menu Category</h3>
+        <div class="boxes">
+          <div class="box box1">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Burger</span>
+          </div>
 
-  <!--Side Bar-->
-  <nav class="sidebar close">
-    <header>
-      <div class="image-text">
-        <span class="image"></span>
-        <div class="text logo-text">
-          <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png" class="sidebar-burger-logo">
-          <span class="name">Menu</span>
+          <div class="box box2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/4329/4329542.png"
+              class="category-drink-icon"
+            />
+            <span class="text">Drinks</span>
+          </div>
         </div>
       </div>
-      <i class='bx bx-chevron-right toggle'></i>
-    </header>
 
-    <div class="menu-bar">
-      <div class="menu">
-        <li class="search-box">
-          <i class='bx bx-search icon'></i>
-          <input type="text" placeholder="Search...">
-        </li>
+      <h3 class="order-text">Choose Order</h3>
+      <div class="food-boxes">
+        <div class="choose-order row">
+          <div class="col-3">
+            <div class="food food1">
+              <img
+                src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+                class="category-burger-icon"
+              />
+              <div class="text-center mt-4">
+                <h5 class="text">Green Burger</h5>
+                <p>
+                  Description of the burgerDescription of the burgerDescription
+                  of the burgerDescription of the burgerDescription of the
+                </p>
+              </div>
 
-        <ul class="menu-links">
-          <li class="nav-link">
-            <a href="#">
-              <i class='bx bx-home-alt icon' ></i>
-              <span class="text nav-text">Home</span>
-            </a>
-          </li>
+              <div class="food-card-footer">
+                <div
+                  class="btn-group align-items-center"
+                  role="group"
+                  aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">-</button>
+                  <h3 class="mb-0">0</h3>
+                  <button type="button" class="btn btn-secondary">+</button>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="pe-2">
+                    <h3 class="mb-0">$20</h3>
+                  </div>
 
-          <li class="nav-link">
-            <a href="#">
-              <i class='bx bx-receipt icon'></i>
-              <span class="text nav-text">My Order</span>
-            </a>
-          </li>
-
-          <li class="nav-link">
-            <a href="#">
-              <i class='bx bx-bell icon'></i>
-              <span class="text nav-text">Notifications</span>
-            </a>
-          </li>
-
-          <li class="nav-link">
-            <a href="#">
-              <i class='bx bx-customize icon'></i>
-              <span class="text nav-text">Setting</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="bottom-content">
-        <li class="">
-          <a href="#">
-            <i class='bx bx-log-out icon' ></i>
-            <span class="text nav-text">Logout</span>
-          </a>
-        </li>
-
-        <li class="mode">
-          <div class="sun-moon">
-            <i class='bx bx-moon icon moon'></i>
-            <i class='bx bx-sun icon sun'></i>
+                  <button class="cards-icon-container btn btn-light">
+                    <i class="bx bx-cart"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <span class="mode-text text">Dark mode</span>
 
-          <div class="toggle-switch">
-            <span class="switch"></span>
+        <div class="col-3">
+          <div class="food food2">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
           </div>
-        </li>
+        </div>
+
+        <div class="col-3">
+          <div class="food food3">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="food food4">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="food food5">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="food food6">
+            <img
+              src="https://i.pinimg.com/564x/c5/cc/20/c5cc2005ad651b73d324513750de085e.jpg"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="food food7">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="food food8">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon"
+            />
+            <span class="text">Item</span>
+          </div>
+        </div>
+
+
+
+
       </div>
     </div>
-  </nav>
-</body>
 
-<script>
-  const body = document.querySelector('body'),
-  sidebar = body.querySelector('nav'),
-  toggle = body.querySelector(".toggle"),
-  searchBtn = body.querySelector(".search-box"),
-  modeSwitch = body.querySelector(".toggle-switch"),
-  modeText = body.querySelector(".mode-text");
+    <!--Side Bar-->
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image"></span>
+          <div class="text logo-text">
+            <img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="sidebar-burger-logo"
+            />
+            <span class="name">Menu</span>
+          </div>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
 
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Search..." />
+          </li>
 
-toggle.addEventListener("click" , () =>{
-sidebar.classList.toggle("close");
-})
+          <ul class="menu-links ps-0">
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Home</span>
+              </a>
+            </li>
 
-searchBtn.addEventListener("click" , () =>{
-sidebar.classList.remove("close");
-})
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-receipt icon"></i>
+                <span class="text nav-text">My Order</span>
+              </a>
+            </li>
 
-modeSwitch.addEventListener("click" , () =>{
-body.classList.toggle("dark");
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-bell icon"></i>
+                <span class="text nav-text">Notifications</span>
+              </a>
+            </li>
 
-if(body.classList.contains("dark")){
-    modeText.innerText = "Light mode";
-}else{
-    modeText.innerText = "Dark mode";
-}
-});
-</script>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-customize icon"></i>
+                <span class="text nav-text">Setting</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="">
+            <a href="#">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+  </body>
+
+  <script>
+    const body = document.querySelector("body"),
+      sidebar = body.querySelector("nav"),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    });
+
+    searchBtn.addEventListener("click", () => {
+      sidebar.classList.remove("close");
+    });
+
+    modeSwitch.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+      } else {
+        modeText.innerText = "Dark mode";
+      }
+    });
+  </script>
 </html>
