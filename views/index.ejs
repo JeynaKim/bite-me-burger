@@ -1,293 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+    <title>Bite Me Burger</title>
 
-<head>
-  <!-- Meta Information -->
-  <meta name="viewport" content="width=device-width, inital-scale=1.0" />
-  <title>Bite Me Burger</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
+    <!-- Boxicon Library -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
 
-  <!-- Boxicon Library -->
-  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+    <!-- Fonts Selection -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
 
-  <!-- Fonts Selection -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
-</head>
-
-<body>
-  <!--Header-->
-  <div class="container custom-container">
-    <div class="main-header-top">
-      <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
-      <h2 class="logo-text">Bite Me Burger</h2>
-    </div>
-
-    <!--Menu Category-->
-    <div class="menu-category">
-      <h3 class="menu-category-text">Menu Category</h3>
-      <div class="boxes">
-        <div class="box box1">
-          <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-            class="category-burger-icon" />
-          <button type="button" class="btn btn-light category-btn">Burger</button>
-        </div>
-
-        <div class="box box2">
-          <img src="https://cdn-icons-png.flaticon.com/512/4329/4329542.png" class="category-drink-icon" />
-          <button type="button" class="btn btn-light category-btn">Drinks</button>
-        </div>
-      </div>
-    </div>
-
-    <!--Choose Order-->
-    <h3 class="choose-order-text">Choose Order</h3>
-    <div class="menu-items">
-      <div class="food-boxes">
-        <div class="choose-order row">
-          <div class="col-3">
-            <div class="items food1">
-              <img class="burger-img1" src="images/burger1.png">
-              <div class="text-center mt-4">
-                <h5 class="text">BaconXXL® Burger</h5>
-                <p>
-                  Description of the burgerDescription of the burgerDescription
-                  of the burgerDescription of the burgerDescription of the
-                </p>
-              </div>
-              <!--Footer - Edit Item's qty, price, add to cart-->
-              <div class="food-card-footer">
-                <div class="btn-group align-items-center" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-secondary">-</button>
-                  <h3 class="mb-0">0</h3>
-                  <button type="button" class="btn btn-secondary">+</button>
-                </div>
-                <div class="d-flex align-items-center">
-                  <div class="pe-2">
-                    <h3 class="mb-0">$20</h3>
+  <body>
+<!--Header-->
+    <div class="container custom-container">
+      <header class="top-nav">
+        <nav class style="background-color: #e92667;">
+          <!-- Navbar content -->
+          <div class="top-navigation">
+            <ul class="top-nav-list">
+              <li class="list">
+                <a href="#">
+                  <span class="icon"></span>
+                  <div class="profile-icon">
+                  <span class="text">Profile</span>
+                  <i class="bx bxs-user"></i>
                   </div>
+                </a>
+              </li>
 
-                  <button class="cards-icon-container btn btn-light">
-                    <i class="bx bx-cart"></i>
-                  </button>
+              <li class="list">
+                <a href="#">
+                  <span class="icon"></span>
+                  <div class="my-cart-icon">
+                  <span class="my-cart-text">My Cart</span>
+                  <i class="bx bxs-cart-download"></i><span>(0)</span>
+                </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <div class="main-header-top">
+        <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
+        <h2 class="logo-text">Bite Me Burger</h2>
+      </div>
+
+      <!--Menu Category-->
+      <div class="menu-category">
+        <h3 class="menu-category-text">Menu Category</h3>
+        <div class="boxes">
+          <div class="box box1">
+            <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="category-burger-icon" />
+            <button type="button" class="btn btn-light category-btn">Burger</button>
+          </div>
+
+          <div class="box box2">
+            <img src="https://cdn-icons-png.flaticon.com/512/4329/4329542.png" class="category-drink-icon" />
+            <button type="button" class="btn btn-light category-btn">Drinks</button>
+          </div>
+        </div>
+      </div>
+
+      <!--Choose Order-->
+      <h3 class="choose-order-text">Choose Order</h3>
+      <div class="menu-items">
+        <div class="food-boxes">
+          <div class="choose-order row">
+            <div class="col-3">
+              <div class="items food1">
+                <img class="burger-img1" src="images/burger1.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">BaconXXL® Burger</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-3">
-            <div class="items food2">
-              <img class="burger-img2" src="images/burger2.png">
-              <h5 class="text">BiteMe's Double® Burger</h5>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
+            <div class="col-3">
+              <div class="items food2">
+                <img class="burger-img2" src="images/burger2.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">BiteMe's Double® Burger</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="items food3">
+                <img class="burger-img3" src="images/burger3.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">Classic Chicken Sandwich Burger</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="items food4">
+                <img class="burger-img4" src="images/burger4.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">Spicy Chicken Sandwich Burger</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="items food5">
+                <img class="set-menu-img" src="images/set-menu1.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">BaconXXL® Combo</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="items food6">
+                <img class="set-menu-img2" src="images/set-menu2.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">BiteMe's Double® Combo</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="items food7">
+                <img class="set-menu-img3" src="images/set-menu3.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">Classic Chicken Sandwich Combo</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3">
+              <div class="items food8">
+                <img class="set-menu-img4" src="images/set-menu4.png">
+                <div class="text-center mt-4">
+                  <h5 class="text">Spicy Chicken Sandwich Combo</h5>
+                  <p>
+                    Description of the burgerDescription of the burgerDescription
+                    of the burgerDescription of the burgerDescription of the
+                  </p>
+                </div>
+                <!--Footer - Edit Item's qty, price, add to cart-->
+                <div class="food-card-footer">
+                  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <h3 class="mb-0">0</h3>
+                    <button type="button" class="btn btn-secondary">+</button>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="pe-2">
+                      <h3 class="mb-0">$20</h3>
+                    </div>
+
+                    <button class="cards-icon-container btn btn-light">
+                      <i class="bx bx-cart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      <!--Side Bar-->
+      <nav class="sidebar close">
+        <header>
+          <div class="image-text">
+            <span class="image"></span>
+            <div class="text logo-text">
+              <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+                class="sidebar-burger-logo" />
+              <span class="name">Menu</span>
             </div>
           </div>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
 
-          <div class="col-3">
-            <div class="items food3">
-              <img class="burger-img3" src="images/burger3.png">
-              <span class="text">Classic Chicken Sandwich Burger</span>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
-            </div>
+        <div class="menu-bar">
+          <div class="menu">
+            <li class="search-box">
+              <i class="bx bx-search icon"></i>
+              <input type="text" placeholder="Search..." />
+            </li>
+
+            <ul class="menu-links ps-0">
+              <li class="nav-link">
+                <a href="#">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Home</span>
+                </a>
+              </li>
+
+              <li class="nav-link">
+                <a href="/user/orders">
+                  <i class="bx bx-receipt icon"></i>
+                  <span class="text nav-text">My Order</span>
+                </a>
+              </li>
+
+              <li class="nav-link">
+                <a href="#">
+                  <i class="bx bx-bell icon"></i>
+                  <span class="text nav-text">Notifications</span>
+                </a>
+              </li>
+
+              <li class="nav-link">
+                <a href="#">
+                  <i class="bx bx-customize icon"></i>
+                  <span class="text nav-text">Setting</span>
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <div class="col-3">
-            <div class="items food4">
-              <img class="burger-img4" src="images/burger4.png">
-              <span class="text">Spicy Chicken Sandwich Burger</span>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="items food5">
-              <img class="set-menu-img" src="images/set-menu1.png">
-              <span class="text">BaconXXL® Combo</span>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="items food6">
-              <img class="set-menu-img2" src="images/set-menu2.png">
-              <span class="text">BiteMe's Double® Combo</span>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="items food7">
-              <img class="set-menu-img3" src="images/set-menu3.png">
-              <span class="text">Classic Chicken Sandwich Combo</span>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="items food8">
-              <img class="set-menu-img4" src="images/set-menu4.png">
-              <span class="text">Spicy Chicken Sandwich Combo</span>
-              <p>
-                Description of the burgerDescription of the burgerDescription
-                of the burgerDescription of the burgerDescription of the
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Side Bar-->
-    <nav class="sidebar close">
-      <header>
-        <div class="image-text">
-          <span class="image"></span>
-          <div class="text logo-text">
-            <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-              class="sidebar-burger-logo" />
-            <span class="name">Menu</span>
-          </div>
-        </div>
-        <i class="bx bx-chevron-right toggle"></i>
-      </header>
-
-      <div class="menu-bar">
-        <div class="menu">
-          <li class="search-box">
-            <i class="bx bx-search icon"></i>
-            <input type="text" placeholder="Search..." />
-          </li>
-
-          <ul class="menu-links ps-0">
-            <li class="nav-link">
+          <div class="bottom-content">
+            <li class="">
               <a href="#">
-                <i class="bx bx-home-alt icon"></i>
-                <span class="text nav-text">Home</span>
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Logout</span>
               </a>
             </li>
 
-            <li class="nav-link">
-              <a href="/user/orders">
-                <i class="bx bx-receipt icon"></i>
-                <span class="text nav-text">My Order</span>
-              </a>
-            </li>
+            <li class="mode">
+              <div class="sun-moon">
+                <i class="bx bx-moon icon moon"></i>
+                <i class="bx bx-sun icon sun"></i>
+              </div>
+              <span class="mode-text text">Dark mode</span>
 
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-bell icon"></i>
-                <span class="text nav-text">Notifications</span>
-              </a>
+              <div class="toggle-switch">
+                <span class="switch"></span>
+              </div>
             </li>
-
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-customize icon"></i>
-                <span class="text nav-text">Setting</span>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
+      </nav>
+  </body>
 
-        <div class="bottom-content">
-          <li class="">
-            <a href="#">
-              <i class="bx bx-log-out icon"></i>
-              <span class="text nav-text">Logout</span>
-            </a>
-          </li>
+  <script>
+    const body = document.querySelector("body"),
+      sidebar = body.querySelector("nav"),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
 
-          <li class="mode">
-            <div class="sun-moon">
-              <i class="bx bx-moon icon moon"></i>
-              <i class="bx bx-sun icon sun"></i>
-            </div>
-            <span class="mode-text text">Dark mode</span>
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    });
 
-            <div class="toggle-switch">
-              <span class="switch"></span>
-            </div>
-          </li>
-        </div>
-      </div>
-    </nav>
-</body>
+    searchBtn.addEventListener("click", () => {
+      sidebar.classList.remove("close");
+    });
 
-<script>
-  const body = document.querySelector("body"),
-    sidebar = body.querySelector("nav"),
-    toggle = body.querySelector(".toggle"),
-    searchBtn = body.querySelector(".search-box"),
-    modeSwitch = body.querySelector(".toggle-switch"),
-    modeText = body.querySelector(".mode-text");
+    modeSwitch.addEventListener("click", () => {
+      body.classList.toggle("dark");
 
-  toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
-  });
+      if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+      } else {
+        modeText.innerText = "Dark mode";
+      }
+    });
+  </script>
+  </html>
 
-  searchBtn.addEventListener("click", () => {
-    sidebar.classList.remove("close");
-  });
 
-  modeSwitch.addEventListener("click", () => {
-    body.classList.toggle("dark");
 
-    if (body.classList.contains("dark")) {
-      modeText.innerText = "Light mode";
-    } else {
-      modeText.innerText = "Dark mode";
-    }
-  });
-</script>
 
-</html>
+
+
+
