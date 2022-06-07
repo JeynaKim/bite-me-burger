@@ -71,6 +71,10 @@ app.get("/user/drinks", (req, res) => {
   res.render("index");
 });
 
+app.get("/user/checkout", (req, res) => {
+res.render("checkout");
+});
+
 app.get("/admin", (req, res) => {
   res.render("admin")
 })
