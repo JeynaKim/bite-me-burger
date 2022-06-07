@@ -1,0 +1,121 @@
+// Choose Order Section
+.choose-order-text {
+  display: flex;
+  margin-top: 70px;
+  margin-left: 12%;
+  font-size: 1.5rem;
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxes .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 102px;
+  height: 170px;
+  margin-top: 3%;
+  padding: 15px 20px;
+  background-color: #f4d35e;
+}
+
+.box2 {
+  margin-left: 20%;
+}
+
+.food-boxes .items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  margin-top: 3%;
+  padding: 15px 20px;
+  background-color: #f4d35e;
+}
+
+// Footer - Edit Item's qty, price, add to cart
+.food-card-footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards-icon-container.btn {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.cards-icon-container .bx {
+  line-height: 0;
+}
+
+// Food Images - Burger, Set Menus
+.set-menu-img {
+  display: flex;
+  width: 225px;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-menu-img2 {
+  display: flex;
+  width: 248px;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-menu-img3 {
+  display: flex;
+  width: 248px;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-menu-img4 {
+  display: flex;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-img1 {
+  display: flex;
+  width: 230px;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-img2 {
+  display: flex;
+  width: 210px;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-img3 {
+  display: flex;
+  width: 236px;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-img4 {
+  display: flex;
+  width: 248px;
+  align-items: center;
+  justify-content: center;
+}
