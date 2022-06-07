@@ -7,6 +7,7 @@ module.exports = (db) => {
     console.log('in API/items:', query)
     db.query(query)
     .then(data => {
+      console.log(data)
       const items = data.rows;
       res.json({ items });
     })
