@@ -8,6 +8,8 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+const path = require("path");
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("../lib/db.js");
@@ -25,8 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   "/styles",
   sassMiddleware({
-    source: __dirname + "/styles",
-    destination: __dirname + "/public/styles",
+    source: path.join(__dirname, "../styles"),
+    destination: path.join(__dirname, "../public/styles"),
     isSass: false, // false => scss, true => sass
   })
 );
@@ -56,7 +58,21 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+<<<<<<< HEAD
 
+=======
+app.get("/user/orders", (req, res) => {
+  res.render("orders");
+});
+
+app.get("/user/burgers", (req, res) => {
+  res.render("index");
+});
+
+app.get("/user/drinks", (req, res) => {
+  res.render("index");
+});
+>>>>>>> master
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

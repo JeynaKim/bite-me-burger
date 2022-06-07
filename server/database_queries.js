@@ -15,14 +15,14 @@ const allMenuItems = function () {
       return res;
     })
     .catch(err => {
-      console.log(`Query error: ${err}`);
+      console.log(`Error: ${err}`);
     })
 };
 
 // Add item to user's cart
 // Parameters come from user menu input
 const addItemToCart = function (item, quantity) {
- return pool.query(`
+  return pool.query(`
   INSERT INTO order_items(items_id, quantity)
   VALUES(
     SELECT id
@@ -44,14 +44,17 @@ const addItemToCart = function (item, quantity) {
 
 // View items in user's cart
 const viewCart = function () {
-  pool.query(`
+  return pool.query(`
   SELECT item_photo_url, item_name, price, quantity
   FROM items
   JOIN order_items
   ON items_id = items.id
   `)
     .then(res => {
-      return
+      return res;
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
     })
 
 }
@@ -62,7 +65,7 @@ const viewCart = function () {
 
 // Add menu items
 const addItemToMenu = function (price, itemName, itemPhotoURL) {
-  pool.query(`
+  return pool.query(`
   INSERT INTO items(price, item_name, item_photo_url)
   VALUES ($1, $2, $3)`,
     [price, itemName, itemPhotoURL]
@@ -71,10 +74,42 @@ const addItemToMenu = function (price, itemName, itemPhotoURL) {
       console.log(`Successfully added ${itemName} at the price of ${price}. Photo URL: ${itemPhotoURL}`);
     })
     .catch(err => {
-      console.log(err);
+      console.log(`Error: ${err}`);
     })
 }
 
 // After order finalization, order is sent to ADMIN
+const getOrders = function () {
+  return pool.query(`
+  SELECT whole_name, created_at, items_id, order_id, quantity
+  FROM orders
+  JOIN order_items ON order_id = orders.id
+  JOIN users ON users_id = users.id
+  WHERE order_complete = false
+  GROUP BY order_id
+  `)
+    .then(res => {
+      return res;
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
+    })
+}
+
+// Restaurant marks order as complete
+const orderComplete = function (orderID) {
+  return pool.query(`
+  UPDATE orders
+  SET order_complete = true
+  WHERE id = ${orderID}
+  `)
+    .then(res => {
+      console.log(`Order ${orderID} complete!`);
+      return res;
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
+    })
+}
 
 
