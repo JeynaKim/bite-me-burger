@@ -1,3 +1,4 @@
+// Header - Main Top //
 .container.custom-container {
   background-color: #f8f9fa;
   min-height: 100vh;
@@ -6,7 +7,7 @@
   overflow: hidden;
 }
 
-.nav-bar {
+.main-header-top {
   background-color: #ffff;
   border: 1px solid black;
   width: 90%;
@@ -21,6 +22,15 @@
   text-align: center;
 }
 
+.logo-text {
+  font-family: "Gochi Hand", cursive;
+}
+
+// Menu Category - Burger, Drinks //
+.box2 {
+  margin-left: 20%;
+}
+
 .category-burger-icon {
   width: 100%;
 }
@@ -29,147 +39,13 @@
   width: 50px;
 }
 
-.logo-text {
-  font-family: "Gochi Hand", cursive;
-}
-
-.sidebar-burger-logo {
-  width: 27px;
-  margin: 10px;
-  text-align: center;
-}
-
-.logo-name {
-  text-align: center;
-}
-
-.logo-text {
-  font-family: "Gochi Hand", cursive;
+.category-btn {
+  margin-top: 15px;
+  height: 35px;
+  width: 75px;
 }
 
 .menu-category-text {
   margin-top: 20px;
   font-size: 1.5rem;
-}
-
-.order-text {
-  display: flex;
-  margin-top: 70px;
-  margin-left: 12%;
-  font-size: 1.5rem;
-}
-
-.menu-text {
-  font-family: "Caveat", cursive;
-}
-
-.boxes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.boxes .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  width: 90px;
-  margin-top: 3%;
-  padding: 15px 20px;
-  background-color: #f4d35e;
-}
-
-.box2 {
-  margin-left: 20%;
-}
-
-.food-boxes .food {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  width: 100%;
-  height: auto;
-  margin-top: 3%;
-  padding: 15px 20px;
-  background-color: #f4d35e;
-}
-
-.food-card-footer {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.cards-icon-container.btn {
-  display: flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-.cards-icon-container .bx {
-  line-height: 0;
-}
-
-.set-menu-img {
-  display: flex;
-  width: 225px;
-  align-items: center;
-  justify-content: center;
-}
-
-.set-menu-img2 {
-  display: flex;
-  width: 248px;
-  align-items: center;
-  justify-content: center;
-}
-
-.set-menu-img3 {
-  display: flex;
-  width: 248px;
-  align-items: center;
-  justify-content: center;
-}
-
-.set-menu-img4 {
-  display: flex;
-  width: 250px;
-  align-items: center;
-  justify-content: center;
-}
-
-.burger-img1 {
-  display: flex;
-  width: 230px;
-  align-items: center;
-  justify-content: center;
-}
-
-.burger-img2 {
-  display: flex;
-  width: 210px;
-  align-items: center;
-  justify-content: center;
-}
-
-.burger-img3 {
-  display: flex;
-  width: 236px;
-  align-items: center;
-  justify-content: center;
-}
-
-.burger-img4 {
-  display: flex;
-  width: 248px;
-  align-items: center;
-  justify-content: center;
 }
