@@ -47,7 +47,7 @@ const ordersRoutes = require("../routes/orders_route");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
-app.use("/user/orders", ordersRoutes(db));
+// app.use("/user/orders", ordersRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -71,6 +71,9 @@ app.get("/user/drinks", (req, res) => {
   res.render("index");
 });
 
+app.get("/admin", (req, res) => {
+  res.render("admin")
+})
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

@@ -113,3 +113,6 @@ const orderComplete = function (orderID) {
 }
 
 
+
+
+export { allMenuItems };
