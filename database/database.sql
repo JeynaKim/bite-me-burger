@@ -10,7 +10,8 @@ CREATE TABLE items (
   id SERIAL PRIMARY KEY,
   price DECIMAL(4, 2),
   item_name TEXT,
-  item_photo_url VARCHAR(255) NOT NULL
+  item_photo_url VARCHAR(255) NOT NULL,
+  item_description VARCHAR(955) NOT NULL
 );
 
 CREATE TABLE orders (
