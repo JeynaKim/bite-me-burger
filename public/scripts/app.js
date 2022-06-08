@@ -37,16 +37,16 @@ const renderMenuItems = (item) => {
   </div>
   <div class="food-card-footer">
   <div class="btn-group align-items-center" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary">-</button>
-  <h3 class="mb-0">0</h3>
-  <button type="button" class="btn btn-secondary">+</button>
+  <div class="quantity-and-price d-flex flex-row justify-content-between align-items-end">
+  <div class="quantity">
+    <input type="number" value="1" min="0" max="100" step="1"/>
   </div>
   <div class="d-flex align-items-center">
   <div class="pe-2">
-  <h3 class="mb-0">${item.price}</h3>
+  <h3 class="mb-0">$${item.price}</h3>
   </div>
   <button class="cards-icon-container btn btn-light">
-  <i class="bx bx-cart"></i>
+  <i class="bx bx-cart" type="button" name="select" value="addToCart"></i>
   </button>
   </div>
   </div>
