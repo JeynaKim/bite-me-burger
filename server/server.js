@@ -41,7 +41,7 @@ const usersRoutes = require("../routes/users");
 const widgetsRoutes = require("../routes/widgets");
 const itemsRoutes = require("../routes/items_route");
 const ordersRoutes = require("../routes/orders_route");
-const restaurauntOrderRoutes = requrie("../routes/restaurant_order_route.js")
+const restaurauntOrderRoutes = require("../routes/restauraunt_order_route")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
