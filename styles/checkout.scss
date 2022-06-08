@@ -138,7 +138,7 @@
 
 .checkout form .user-info .box {
   width: 100%;
-  border: var(--border);
+  border: 4px solid black;
   padding: 1.4rem;
   color: var(--black);
   font-size: 1.8rem;
@@ -185,8 +185,7 @@
 
 .checkout-burger-logo {
   width: 65px;
-  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
-  margin: 5px;
   text-align: center;
 }
