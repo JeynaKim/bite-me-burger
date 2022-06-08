@@ -42,7 +42,7 @@ const widgetsRoutes = require("../routes/widgets");
 const itemsRoutes = require("../routes/items_route");
 const ordersRoutes = require("../routes/orders_route");
 const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
-//const orderPost = require("../routes/order_post.js")
+const orderPost = require("../routes/order_post.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
 
 // Mount all resource routes
@@ -52,8 +52,8 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
 app.use("/user/order", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
-//app.use("/user/successful_order", orderPost(db))
-app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
+app.use("/user/successful_order", orderPost(db))
+app.use("/admin/order/complete", orderCompleteRoutes(db))
 // Note: mount other resources here, using the same pattern above
 
 // Home page

@@ -45,10 +45,10 @@ const addItemToCart = function (item, quantity) {
 // View items in user's cart
 const viewCart = function () {
   return pool.query(`
-  SELECT item_photo_url, item_name, price, quantity
-  FROM items
-  JOIN order_items
-  ON items_id = items.id
+    SELECT item_photo_url, item_name, price, quantity
+    FROM items
+    JOIN order_items
+    ON items_id = items.id
   `)
     .then(res => {
       return res;
