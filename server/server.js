@@ -41,19 +41,19 @@ const usersRoutes = require("../routes/users");
 const widgetsRoutes = require("../routes/widgets");
 const itemsRoutes = require("../routes/items_route");
 const ordersRoutes = require("../routes/orders_route");
-const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
+const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js");
 //const orderPost = require("../routes/order_post.js")
-const orderCompleteRoutes = require("../routes/order_complete_route")
+const orderCompleteRoutes = require("../routes/order_complete_route");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
-app.use("/user/order", ordersRoutes(db))
-app.use("/admin/order", restaurauntOrderRoutes(db))
+app.use("/user/order", ordersRoutes(db));
+app.use("/admin/order", restaurauntOrderRoutes(db));
 //app.use("/user/successful_order", orderPost(db))
-app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
+app.use("/admin/order/complete", orderCompleteRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -63,7 +63,6 @@ app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
 app.get("/", (req, res) => {
   res.render("index");
 });
-
 
 app.get("/user/orders", (req, res) => {
   res.render("orders");
@@ -78,12 +77,12 @@ app.get("/user/drinks", (req, res) => {
 });
 
 app.get("/user/checkout", (req, res) => {
-res.render("checkout");
+  res.render("checkout");
 });
 
 app.get("/admin", (req, res) => {
-  res.render("admin")
-})
+  res.render("admin");
+});
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
