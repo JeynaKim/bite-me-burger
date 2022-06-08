@@ -53,8 +53,23 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
 app.use("/user/order", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
+<<<<<<< HEAD
 // app.use("/user/successful_order", orderPost(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+//app.use("/user/successful_order", orderPost(db))
+// app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
+=======
+app.use("/user/successful_order", orderPost(db))
+app.use("/admin/order/complete", orderCompleteRoutes(db))
+>>>>>>> 414b60e6981583622943db5dd762e4878fded301
+=======
+app.use("/user/successful_order", orderPost(db))
+app.use("/admin/order/complete", orderCompleteRoutes(db))
+>>>>>>> 414b60e6981583622943db5dd762e4878fded301
+>>>>>>> master
 // Note: mount other resources here, using the same pattern above
 
 // Home page
