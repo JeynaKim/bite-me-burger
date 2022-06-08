@@ -1,5 +1,5 @@
 const express = require('express');
-const res = require('express/lib/response');
+
 const router = express.Router();
 
 module.exports = (db) => {
@@ -10,12 +10,13 @@ module.exports = (db) => {
     JOIN order_items ON order_id = orders.id
     JOIN users ON users_id = users.id
     WHERE order_complete = false
-    GROUP BY orders_items.items_id;`
+    ORDER BY orders.id;`
 
     db.query(query)
       .then(data => {
-        items = data.rows;
-        res.json({ items })
+        const items = data.rows;
+        res.json({ items });
+        console.log(items)
       })
       .catch(err => {
         res
@@ -25,3 +26,4 @@ module.exports = (db) => {
   })
   return router;
 }
+
