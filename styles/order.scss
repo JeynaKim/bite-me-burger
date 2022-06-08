@@ -6,8 +6,10 @@
 }
 
 .orders .box-container .box {
-  border: black solid 2px;
+  border: black solid 3.5px;
   padding: 1rem 2rem;
+  height: 1107px;
+  margin-bottom: 100px;
 }
 
 .orders .box-container .box p {
@@ -46,6 +48,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 55px;
+  margin-top: 50px;
   gap: 1rem;
   flex-flow: column;
   height: 67px;
