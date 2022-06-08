@@ -44,8 +44,7 @@ const ordersRoutes = require("../routes/orders_route");
 const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
 //const orderPost = require("../routes/order_post.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
-const twilioConfirmation = require("../routes/twilio");
-const smsConfirmation = require("./twilio/send_sms")
+const sendClientConfirmation = require("./twilio/send_sms")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -55,7 +54,7 @@ app.use("/user/items", itemsRoutes(db));
 app.use("/user/order", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
 //app.use("/user/successful_order", orderPost(db))
-app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
+// app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -79,8 +78,8 @@ app.get("/user/drinks", (req, res) => {
   res.render("index");
 });
 
-app.post("/user/checkout", (req, res) => {
-  smsConfirmation();
+app.post("/user/checkout/complete", (req, res) => {
+  sendClientConfirmation();
 });
 
 app.get("/user/checkout", (req, res) => {
