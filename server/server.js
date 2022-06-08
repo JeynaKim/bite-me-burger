@@ -54,8 +54,13 @@ app.use("/user/items", itemsRoutes(db));
 app.use("/user/order", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
 <<<<<<< HEAD
+<<<<<<< HEAD
 //app.use("/user/successful_order", orderPost(db))
 // app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
+=======
+app.use("/user/successful_order", orderPost(db))
+app.use("/admin/order/complete", orderCompleteRoutes(db))
+>>>>>>> 414b60e6981583622943db5dd762e4878fded301
 =======
 app.use("/user/successful_order", orderPost(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
