@@ -19,16 +19,18 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
 
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
 
+  <!-- Fontawesom Library-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
   <!-- Fonts Selection -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,20 +45,39 @@
 
 <body>
   <!--Header-->
+      <header class="top-nav">
+        <nav class style="background-color: #e92667;">
+          <!-- Navbar content -->
+          <div class="top-navigation">
+            <ul class="top-nav-list">
+              <li class="list">
+                <a href="#">
+                  <span class="icon"></span>
+                  <div class="profile-icon">
+                    <span class="text">Profile</span>
+                    <i class="bx bxs-user"></i>
+                  </div>
+                </a>
+              </li>
+
+              <li class="list">
+                <a href="/user/checkout">
+                  <span class="icon"></span>
+                  <div class="my-cart-icon">
+                    <span class="my-cart-text">My Cart</span>
+                    <i class="bx bxs-cart-download"></i><span>(0)</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <!-- Navbar content -->
   <div class="container custom-container">
     <div class="main-header-top">
       <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
       <h2 class="logo-text">Bite Me Burger</h2>
     </div>
-
-    <!--Menu Category-->
-    <div class="checkout">
-      <h3 class="menu-category-text">Checkout</h3>
-      <div class="boxes">
-
-      </div>
-    </div>
-
 
     <!--Side Bar-->
     <nav class="sidebar close">
@@ -135,7 +156,6 @@
 
     <div class="heading">
       <h3>checkout</h3>
-      <p><a href="#">home </a> <span> / checkout</span></p>
     </div>
 
     <section class="checkout">
@@ -163,24 +183,23 @@
           <a href="cart.html" class="btn">view cart</a>
         </div>
         <div class="user-info">
-          <h3>your info</h3>
+          <h3>Personal Information</h3>
           <p><i class="fas fa-user"></i> <span>Jeyna Kim</span></p>
           <p><i class="fas fa-phone"></i> <span>647-000-0000</span></p>
           <p>
             <i class="fas fa-envelope"></i> <span>jeyna.kim@gmail.com</span>
           </p>
-          <a href="update_profile.html" class="btn">update info</a>
-          <h3>delivery address</h3>
+          <a href="#" class="btn">update info</a>
+          <h3>Delivery Address</h3>
           <p class="address">
             <i class="fas fa-map-marker-alt"></i>
             <span>1234 Lighthouselab Ave, Toronto, ON M2N 0A8</span>
           </p>
-          <a href="update_address.html" class="btn">update address</a>
+          <a href="#" class="btn">update address</a>
           <select name="method" class="box" required>
             <option value="" disabled selected>select payment method</option>
             <option value="cash on delivery">cash on delivery</option>
             <option value="credit card">credit card</option>
-            <option value="paytm">paytm</option>
             <option value="paypal">paypal</option>
           </select>
         </div>

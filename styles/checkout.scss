@@ -26,7 +26,7 @@
   justify-content: center;
   gap: 1rem;
   flex-flow: column;
-  min-height: 20rem;
+  min-height: 6rem;
 }
 
 .heading h3 {
@@ -51,6 +51,7 @@
 
 .title {
   text-align: center;
+  margin-top: 56px;
   margin-bottom: 3rem;
   font-size: 4rem;
   color: var(--black);
