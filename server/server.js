@@ -51,25 +51,16 @@ const { sendClientConfirmation } = require("./twilio/send_sms")
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
-app.use("/user/order", ordersRoutes(db))
-app.use("/admin/order", restaurauntOrderRoutes(db))
-<<<<<<< HEAD
+app.use("/user/orders", ordersRoutes(db))
+app.use("/admin/orders", restaurauntOrderRoutes(db))
 // app.use("/user/successful_order", orderPost(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 //app.use("/user/successful_order", orderPost(db))
 // app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
-=======
 app.use("/user/successful_order", orderPost(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
->>>>>>> 414b60e6981583622943db5dd762e4878fded301
-=======
 app.use("/user/successful_order", orderPost(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
->>>>>>> 414b60e6981583622943db5dd762e4878fded301
->>>>>>> master
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -80,7 +71,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/user/orders", (req, res) => {
+app.get("/orders", (req, res) => {
   res.render("orders");
 });
 
