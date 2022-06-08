@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
 
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -32,18 +33,11 @@
   <!-- Fonts Selection -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
 </head>
 
@@ -138,6 +132,70 @@
         </div>
       </div>
     </nav>
+
+    <div class="heading">
+      <h3>checkout</h3>
+      <p><a href="#">home </a> <span> / checkout</span></p>
+    </div>
+
+    <section class="checkout">
+      <h1 class="title">order summary</h1>
+
+      <form action="" method="post">
+        <div class="cart-items">
+          <h3>cart items</h3>
+          <p>
+            <span class="name">BiteMe Burger 01</span
+            ><span class="price">$5</span>
+          </p>
+          <p>
+            <span class="name">BiteMe Combo 02</span
+            ><span class="price">$5</span>
+          </p>
+          <p>
+            <span class="name">Chicken Sandwich 01</span
+            ><span class="price">$5</span>
+          </p>
+          <p class="grand-total">
+            <span class="name">grand total :</span>
+            <span class="price">$15</span>
+          </p>
+          <a href="cart.html" class="btn">view cart</a>
+        </div>
+        <div class="user-info">
+          <h3>your info</h3>
+          <p><i class="fas fa-user"></i> <span>Jeyna Kim</span></p>
+          <p><i class="fas fa-phone"></i> <span>647-000-0000</span></p>
+          <p>
+            <i class="fas fa-envelope"></i> <span>jeyna.kim@gmail.com</span>
+          </p>
+          <a href="update_profile.html" class="btn">update info</a>
+          <h3>delivery address</h3>
+          <p class="address">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>1234 Lighthouselab Ave, Toronto, ON M2N 0A8</span>
+          </p>
+          <a href="update_address.html" class="btn">update address</a>
+          <select name="method" class="box" required>
+            <option value="" disabled selected>select payment method</option>
+            <option value="cash on delivery">cash on delivery</option>
+            <option value="credit card">credit card</option>
+            <option value="paytm">paytm</option>
+            <option value="paypal">paypal</option>
+          </select>
+        </div>
+        <input
+          type="submit"
+          value="place order"
+          name="order"
+          class="btn order-btn"
+        />
+      </form>
+    </section>
+
+
+
+
 </body>
 
 <script>
