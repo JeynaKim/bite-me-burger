@@ -1,0 +1,72 @@
+.orders .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.orders .box-container .box {
+  border: black solid 2px;
+  padding: 1rem 2rem;
+}
+
+.orders .box-container .box p {
+  font-size: 2rem;
+  color: grey;
+  line-height: 2;
+}
+
+.orders .box-container .box p span {
+  color: black;
+}
+
+* {
+  font-family: "Crimson Text", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+:root {
+  --yellow: #fed330;
+  --red: #e74c3c;
+  --white: #fff;
+  --lightyellow: #f4d35e;
+  --light-color: #777;
+  --border: 0.2rem solid var(--black);
+}
+
+.order-heading {
+  background-color: #f4d35e;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-flow: column;
+  height: 67px;
+}
+
+.order-heading h3 {
+  font-size: 4rem;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+.order-heading p a {
+  font-size: 2rem;
+  color: var(--yellow);
+}
+
+.order-heading p span {
+  font-size: 2rem;
+  color: var(--light-color);
+}
+
+.order-heading p a:hover {
+  color: var(--white);
+}

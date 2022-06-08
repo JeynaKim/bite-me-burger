@@ -64,7 +64,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-
 app.get("/user/orders", (req, res) => {
   res.render("orders");
 });
@@ -78,12 +77,12 @@ app.get("/user/drinks", (req, res) => {
 });
 
 app.get("/user/checkout", (req, res) => {
-res.render("checkout");
+  res.render("checkout");
 });
 
 app.get("/admin", (req, res) => {
-  res.render("admin")
-})
+  res.render("admin");
+});
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
