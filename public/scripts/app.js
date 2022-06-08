@@ -27,13 +27,14 @@ const getAllItems = () => {
 };
 
 const renderMenuItems = (item) => {
+  console.log(item);
   const $itemList = `
   <div class="col-3">
   <div class="items food1">
-  <img class="burger-img1" src="${item.item_photo_url}">
+  <img class="burger-img1" src="../${item.item_photo_url}">
   <div class="text-center mt-4">
   <h5 class="text">${item.item_name}</h5>
-  <p>Description of the burgerDescription of the burgerDescription of the burgerDescription of the burgerDescription of the</p>
+  <p>${item.item_description}</p>
   </div>
   <div class="food-card-footer">
   <div class="btn-group align-items-center" role="group" aria-label="Basic example">

@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 3px;
   box-sizing: border-box;
   font-family: "Indie Flower", cursive;
 }
@@ -21,7 +21,6 @@
 
 body {
   min-height: 100vh;
-  background-color: var(--body-color);
   transition: var(--tran-05);
 }
 
