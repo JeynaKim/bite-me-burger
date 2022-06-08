@@ -1,12 +1,12 @@
 INSERT INTO items(price, item_name, item_photo_url, item_description)
-VALUES (20, 'BaconXXL® Burger', 'images/burger1.png', 'Two classic beef patties with extra strips of crispy bacon and cheddar cheese'),
+VALUES (20, 'BaconXXL® Burger', 'images/burger1.png', 'Two classic beef patties with extra strips of crispy bacon and cheddar cheese.'),
 (20, 'BiteMe''s Double® Burger', 'images/burger2.png', 'Two classic beef patties topped with cheddar cheese, onions, tomatoes, lettuce, and pickles.'),
 (20, 'Classic Chicken Sandwich Burger', 'images/burger3.png', 'Crispy fried chicken served with lettuce, tomatoes, pickles, and house sauce.'),
-(20, 'Spicy Chicken Sandwich Burger', 'images/burger4.png', 'A classic with a twist: our famous tender fried chicken seasoned with a blend of 5 spices, served with lettuce, tomatoes, and house sauce'),
-(20, 'BaconXXL® Combo', 'images/set-menu1.png', 'Our famously BIG BaconXXL® burger served with fries and a medium soft drink of your choice'),
+(20, 'Spicy Chicken Sandwich Burger', 'images/burger4.png', 'A classic with a twist: our famous tender fried chicken seasoned with a blend of 5 spices, served with lettuce, tomatoes, and house sauce.'),
+(20, 'BaconXXL® Combo', 'images/set-menu1.png', 'Our famously BIG BaconXXL® burger served with fries and a medium soft drink of your choice.'),
 (20, 'BiteMe''s Double® Combo', 'images/set-menu2.png', 'Fill up with our familiar BiteMe''s Double® Burger. Comes with fries and a medium soft drink of your choice.'),
-(20, 'Classic Chicken Sandwich Combo', 'images/set-menu3.png', 'Treat yourself to our Classic Chicken Sandwich! Served with fries and a soft drink of your choice'),
-(20, 'Spicy Chicken Sandwich Combo', 'images/set-menu4.png', 'Take the spice of our Spicy Chicken Sandwich to the next level with a side of fries and soft drink of your choice. ');
+(20, 'Classic Chicken Sandwich Combo', 'images/set-menu3.png', 'Treat yourself to our Classic Chicken Sandwich! Served with fries and a soft drink of your choice.'),
+(20, 'Spicy Chicken Sandwich Combo', 'images/set-menu4.png', 'Take the spice of our Spicy Chicken Sandwich to the next level with a side of fries and soft drink of your choice.');
 
 
 INSERT INTO users(whole_name, phone_number, email)

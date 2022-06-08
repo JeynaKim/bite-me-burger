@@ -2,6 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
+// ADMIN SIDE: Restauraunt views all incomplete orders
+
 module.exports = (db) => {
   router.get("/", (req, res) => {
     let query = `
