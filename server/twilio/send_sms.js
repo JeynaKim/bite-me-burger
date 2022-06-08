@@ -13,6 +13,5 @@ function sendClientConfirmation() {
   })
 }
 
-sendClientConfirmation();
 
 module.exports = { sendClientConfirmation };
