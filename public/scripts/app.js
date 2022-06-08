@@ -12,17 +12,17 @@ $(() => {
 
 const getAllOrders = () => {
   $.ajax({
-    url:"/user/orders",
+    url: "/user/orders",
     type: "GET",
     success: (result) => {
-      console.log('result:', result)
+      console.log("result:", result);
       const orders = result.orders;
       for (const order of orders) {
         $(".order-items").append(renderOrderItems(order));
       }
     },
     error: (err) => {
-      console.log('error:', err.message)
+      console.log("error:", err.message);
     },
   });
 };
@@ -46,9 +46,8 @@ const renderOrderItems = (order) => {
               </div>
             </div>
             `;
-          return $orderList;
+  return $orderList;
 };
-
 
 const getAllItems = () => {
   $.ajax({
@@ -78,9 +77,9 @@ const renderMenuItems = (item) => {
   </div>
   <div class="food-card-footer">
 
-  <div class="row quantity-and-price align-items-center justify-content-end">
-  <div class="col-4"></div>
-  <div class="quantity col-2">
+  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
+  <div class="quantity-and-price d-flex flex-row justify-content-between align-items-end">
+  <div class="quantity">
   <input type="number" value="1" min="0" max="100" step="1"/>
   </div>
   <div class="col-3">
@@ -96,5 +95,3 @@ const renderMenuItems = (item) => {
   `;
   return $itemList;
 };
-
-
