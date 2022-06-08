@@ -1,0 +1,50 @@
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.footer .box-container {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;*/
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer .box-container .box {
+  text-align: center;
+  padding: 2rem;
+  border: black;
+}
+
+.footer .box-container .box img {
+  height: 10rem;
+  margin-bottom: 1rem;
+}
+
+.footer .box-container .box h3 {
+  margin: 1rem 0;
+  font-size: 2rem;
+  color: black;
+}
+
+.footer .box-container .box a,
+.footer .box-container .box p {
+  line-height: 2;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  display: block;
+}
+
+.footer .credit {
+  background-color: black;
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.footer .credit span {
+  color: yellow;
+}
