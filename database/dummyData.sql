@@ -20,4 +20,4 @@ VALUES (1, true, '2022-06-06 20:15:00', 25, '2022-06-06 20:20:00', '2022-06-06 2
 (3, true, '2022-06-06 10:15:00', 25, '2022-06-06 10:20:00', '2022-06-06 10:21:00', true, 'Your order is ready Mr. Chaplin');
 
 INSERT INTO order_items(items_id, order_id, quantity)
-VALUES (1, 2, 3), (2, 3, 4), (3, 4, 5);
+VALUES (1, 2, 3), (2, 3, 4), (3, 2, 5);
