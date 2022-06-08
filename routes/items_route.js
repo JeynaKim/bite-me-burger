@@ -9,7 +9,6 @@ module.exports = (db) => {
       .then((data) => {
         console.log(data);
         const items = data.rows;
-        // res.render("index", { items });
         res.json({ items });
       })
       .catch((err) => {

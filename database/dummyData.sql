@@ -1,12 +1,12 @@
-INSERT INTO items(price, item_name, item_photo_url)
-VALUES (5.95, 'Classic Smash Burger', 'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Smash-Burgers_EXPS_TOHcom20_246232_B10_06_10b.jpg'),
-(6.95, 'Barbecue Smash Burger', 'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/exps28800_UG143377D12_18_1b_RMS.jpg'),
-(4.95, 'Double Ranch Burger', 'https://assets.epicurious.com/photos/5580664481ac1e502367643f/2:1/w_2000,h_1000,c_limit/56389654_double-rl-ranch-burger_1x1.jpg'),
-(6.95, 'Buttermilk Fried Crispy Chicken Burger', 'https://girlheartfood.com/wp-content/uploads/2020/06/Crispy-Chicken-Burger-10.jpg'),
-(5.95, 'Vegan Mushroom Bean Burger', 'https://www.thespruceeats.com/thmb/KAgMssHoQUmx30uuYL_FTahXA0A=/2048x1360/filters:fill(auto,1)/vegan-mushroom-bean-burger-recipe-3378623-13_preview1-5b241897fa6bcc0036d2c9bf.jpeg'),
-(6.45, 'Vegan Sweet Potato Burger', 'https://thishealthykitchen.com/wp-content/uploads/2019/03/vegan-sweet-potato-burgers-Feat-Image-Square-1200x1200-1.jpg'),
-(6.95, 'Crispy Fish Burger with Jalapeno Mayo', 'https://www.unileverfoodsolutions.com.au/dam/global-ufs/mcos/ANZ/calcmenu/recipes/AU-recipes/fish-&-other-seafood-dishes/crispy-fish-burger-with-jalapeno-tartare-sauce/main-header.jpg'),
-(5.95, 'Spicy Chicken Burger', 'https://thecozyapron.com/wp-content/uploads/2014/03/spicy-chicken-sandwich_thecozyapron_1.jpg');
+INSERT INTO items(price, item_name, item_photo_url, item_description)
+VALUES (20, 'BaconXXL® Burger', 'images/burger1.png', 'Two classic beef patties with extra strips of crispy bacon and cheddar cheese'),
+(20, 'BiteMe''s Double® Burger', 'images/burger2.png', 'Two classic beef patties topped with cheddar cheese, onions, tomatoes, lettuce, and pickles.'),
+(20, 'Classic Chicken Sandwich Burger', 'images/burger3.png', 'Crispy fried chicken served with lettuce, tomatoes, pickles, and house sauce.'),
+(20, 'Spicy Chicken Sandwich Burger', 'images/burger4.png', 'A classic with a twist: our famous tender fried chicken seasoned with a blend of 5 spices, served with lettuce, tomatoes, and house sauce'),
+(20, 'BaconXXL® Combo', 'images/set-menu1.png', 'Our famously BIG BaconXXL® burger served with fries and a medium soft drink of your choice'),
+(20, 'BiteMe''s Double® Combo', 'images/set-menu2.png', 'Fill up with our familiar BiteMe''s Double® Burger. Comes with fries and a medium soft drink of your choice.'),
+(20, 'Classic Chicken Sandwich Combo', 'images/set-menu3.png', 'Treat yourself to our Classic Chicken Sandwich! Served with fries and a soft drink of your choice'),
+(20, 'Spicy Chicken Sandwich Combo', 'images/set-menu4.png', 'Take the spice of our Spicy Chicken Sandwich to the next level with a side of fries and soft drink of your choice. ');
 
 
 INSERT INTO users(whole_name, phone_number, email)
@@ -20,4 +20,4 @@ VALUES (1, true, '2022-06-06 20:15:00', 25, '2022-06-06 20:20:00', '2022-06-06 2
 (3, true, '2022-06-06 10:15:00', 25, '2022-06-06 10:20:00', '2022-06-06 10:21:00', true, 'Your order is ready Mr. Chaplin');
 
 INSERT INTO order_items(items_id, order_id, quantity)
-VALUES (1, 2, 3), (2, 3, 4), (3, 2, 5);
+VALUES (1, 2, 3), (2, 3, 4), (3, 1, 5);
