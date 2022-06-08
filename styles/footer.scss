@@ -2,12 +2,10 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  border: 2px solid black;
 }
 
 .footer .box-container {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-  gap: 1.5rem;*/
   display: flex;
   align-items: flex-start;
 }
