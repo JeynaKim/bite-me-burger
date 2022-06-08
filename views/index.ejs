@@ -34,161 +34,129 @@
   <!-- Fonts Selection -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <!--Header-->
-  <div class="container custom-container">
-    <header class="top-nav">
-      <nav class style="background-color: #e92667;">
-        <!-- Navbar content -->
-        <div class="top-navigation">
-          <ul class="top-nav-list">
-            <li class="list">
-              <a href="#">
-                <span class="icon"></span>
-                <div class="profile-icon">
-                  <span class="text">Profile</span>
-                  <i class="bx bxs-user"></i>
-                </div>
-              </a>
-            </li>
+  <!--Top Nav Bar-->
+  <div class="header">
+    <ul>
+      <li><a href="#"><i class="bx bxs-user"></i>Profile</a></li>
+      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span>(0)</span></a></li>
+    </ul>
+  </div>
+  <div class="main-header-top">
+    <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
+    <h2 class="logo-text">Bite Me Burger</h2>
+  </div>
 
-            <li class="list">
-              <a href="/user/checkout">
-                <span class="icon"></span>
-                <div class="my-cart-icon">
-                  <span class="my-cart-text">My Cart</span>
-                  <i class="bx bxs-cart-download"></i><span>(0)</span>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <div class="main-header-top">
-      <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
-      <h2 class="logo-text">Bite Me Burger</h2>
-    </div>
+  <!--Menu Category-->
+  <div class="menu-category">
+    <h3 class="menu-category-text">Menu Category</h3>
+    <div class="boxes">
+      <div class="box box1">
+        <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png" class="category-burger-icon">
+        <button type="button" class="btn btn-light category-btn">Burger</button>
+      </div>
 
-    <!--Menu Category-->
-    <div class="menu-category">
-      <h3 class="menu-category-text">Menu Category</h3>
-      <div class="boxes">
-        <div class="box box1">
-          <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-            class="category-burger-icon" />
-          <button type="button" class="btn btn-light category-btn">Burger</button>
-        </div>
-
-        <div class="box box2">
-          <img src="https://cdn-icons-png.flaticon.com/512/4329/4329542.png" class="category-drink-icon" />
-          <button type="button" class="btn btn-light category-btn">Drinks</button>
-        </div>
+      <div class="box box2">
+        <img src="https://cdn-icons-png.flaticon.com/512/4329/4329542.png" class="category-drink-icon" />
+        <button type="button" class="btn btn-light category-btn">Drinks</button>
       </div>
     </div>
+  </div>
 
-    <!--Choose Order-->
-    <h3 class="choose-order-text">Choose Order</h3>
-    <div class="menu-items">
-      <div class="food-boxes">
-        <div class="choose-order row">
+  <!--Choose Order-->
+  <h3 class="choose-order-text">Choose Order</h3>
+  <div class="menu-items">
+    <div class="food-boxes">
+      <div class="choose-order row">
 
-    <!--app.js: GET our burger menu's information(name,price,description) from the database->
+        <!--app.js: GET our burger menu's information(name,price,description) from the database-> -->
 
-          <!--Side Bar-->
-          <nav class="sidebar close">
-            <header>
-              <div class="image-text">
-                <span class="image"></span>
-                <div class="text logo-text">
-                  <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-                    class="sidebar-burger-logo" />
-                  <span class="name">Menu</span>
-                </div>
+        <!--Side Bar -->
+        <nav class="sidebar close">
+          <header>
+            <div class="image-text">
+              <span class="image"></span>
+              <div class="text logo-text">
+                <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+                  class="sidebar-burger-logo" />
+                <span class="name">Menu</span>
               </div>
-              <i class="bx bx-chevron-right toggle"></i>
-            </header>
+            </div>
+            <i class="bx bx-chevron-right toggle"></i>
+          </header>
 
-            <div class="menu-bar">
-              <div class="menu">
-                <li class="search-box">
-                  <i class="bx bx-search icon"></i>
-                  <input type="text" placeholder="Search..." />
-                </li>
+          <div class="menu-bar">
+            <div class="menu">
+              <li class="search-box">
+                <i class="bx bx-search icon"></i>
+                <input type="text" placeholder="Search..." />
+              </li>
 
-                <ul class="menu-links ps-0">
-                  <li class="nav-link">
-                    <a href="#">
-                      <i class="bx bx-home-alt icon"></i>
-                      <span class="text nav-text">Home</span>
-                    </a>
-                  </li>
-
-                  <li class="nav-link">
-                    <a href="/user/orders">
-                      <i class="bx bx-receipt icon"></i>
-                      <span class="text nav-text">My Order</span>
-                    </a>
-                  </li>
-
-                  <li class="nav-link">
-                    <a href="#">
-                      <i class="bx bx-bell icon"></i>
-                      <span class="text nav-text">Notifications</span>
-                    </a>
-                  </li>
-
-                  <li class="nav-link">
-                    <a href="#">
-                      <i class="bx bx-customize icon"></i>
-                      <span class="text nav-text">Setting</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="bottom-content">
-                <li class="">
+              <ul class="menu-links ps-0">
+                <li class="nav-link">
                   <a href="#">
-                    <i class="bx bx-log-out icon"></i>
-                    <span class="text nav-text">Logout</span>
+                    <i class="bx bx-home-alt icon"></i>
+                    <span class="text nav-text">Home</span>
                   </a>
                 </li>
 
-                <li class="mode">
-                  <div class="sun-moon">
-                    <i class="bx bx-moon icon moon"></i>
-                    <i class="bx bx-sun icon sun"></i>
-                  </div>
-                  <span class="mode-text text">Dark mode</span>
-
-                  <div class="toggle-switch">
-                    <span class="switch"></span>
-                  </div>
+                <li class="nav-link">
+                  <a href="/user/orders">
+                    <i class="bx bx-receipt icon"></i>
+                    <span class="text nav-text">My Order</span>
+                  </a>
                 </li>
-              </div>
+
+                <li class="nav-link">
+                  <a href="#">
+                    <i class="bx bx-bell icon"></i>
+                    <span class="text nav-text">Notifications</span>
+                  </a>
+                </li>
+
+                <li class="nav-link">
+                  <a href="#">
+                    <i class="bx bx-customize icon"></i>
+                    <span class="text nav-text">Setting</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-          </nav>
+
+            <div class="bottom-content">
+              <li class="">
+                <a href="#">
+                  <i class="bx bx-log-out icon"></i>
+                  <span class="text nav-text">Logout</span>
+                </a>
+              </li>
+
+              <li class="mode">
+                <div class="sun-moon">
+                  <i class="bx bx-moon icon moon"></i>
+                  <i class="bx bx-sun icon sun"></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                  <span class="switch"></span>
+                </div>
+              </li>
+            </div>
+          </div>
+        </nav>
 </body>
 
 <script>
   const body = document.querySelector("body"),
-    sidebar = body.querySelector("nav"),
+    sidebar = body.querySelector(".sidebar"),
     toggle = body.querySelector(".toggle"),
     searchBtn = body.querySelector(".search-box"),
     modeSwitch = body.querySelector(".toggle-switch"),
@@ -212,5 +180,4 @@
     }
   });
 </script>
-
 </html>
