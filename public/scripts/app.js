@@ -14,7 +14,6 @@ const getAllItems = () => {
     url: "/user/items",
     type: "GET",
     success: (result) => {
-      // The specified route already returns the table 'items' as an object
       const items = result.items;
       for (const item of items) {
         $(".choose-order").append(renderMenuItems(item));

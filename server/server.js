@@ -51,7 +51,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
 app.use("/user/order", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
-app.use("/user/successful_order", orderPost(db))
+//app.use("/user/successful_order", orderPost(db))
 
 // Note: mount other resources here, using the same pattern above
 
