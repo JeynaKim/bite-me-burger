@@ -1,32 +1,26 @@
 const accountSid = process.env.TWILIO_ACCOUNTSID;
 const authToken = process.env.TWILIO_AUTHTOKEN;
-const fromPhone = process.env.TWILIO_NUMBER;
+const twilioPhone = process.env.TWILIO_NUMBER;
+const recipient = process.env.NUMBER_TO_CALL;
 
 const client = require('twilio')(accountSid, authToken);
 
-const order = {
-  name: 'Heather McLeod',
-  phone: '16475807372',
-  order: "biteme burger"
-}
 
-function sendClientConfirmation(order) {
-  // Creates message to send to customer
-  const message = {
-    to: order.phone,
+function sendClientConfirmation(phone, orderTime) {
+const message = {
+    body: `Hello ${orderData.body.name}, Thank you for your Bite Me Burger order.
+    This is a confirmation that your order has been accepted. You can pick it up in `,
     from: twilioPhone,
-    body: `Your order has been confirmed! You ordered the ${order.order}`
+    to: recipient,
+    };
+
+    client.messages.create(options, (err, response) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(`Confirmed order and sent to ${recipient}`)
+      }
+    })
   };
 
-// Sends the message to the customer
-client.messages
-  .create(message, (err, res) => {
-    if (err) {
-      console.log('error:', err);
-    } else {
-  console.log('message send successfully to confirm order')
-  };
-  })
-}
-
-sendClientConfirmation(order)
+module.exports = { sendClientConfimation };
