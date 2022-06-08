@@ -44,6 +44,8 @@ const ordersRoutes = require("../routes/orders_route");
 const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
 //const orderPost = require("../routes/order_post.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
+const twilioConfirmation = require("../routes/twilio");
+const smsConfirmation = require("./twilio/send_sms")
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -75,6 +77,10 @@ app.get("/user/burgers", (req, res) => {
 
 app.get("/user/drinks", (req, res) => {
   res.render("index");
+});
+
+app.post("/user/checkout", (req, res) => {
+  smsConfirmation();
 });
 
 app.get("/user/checkout", (req, res) => {

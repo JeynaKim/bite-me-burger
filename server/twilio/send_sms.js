@@ -6,7 +6,7 @@ const recipient = process.env.NUMBER_TO_CALL;
 const client = require('twilio')(accountSid, authToken);
 
 
-function sendClientConfirmation(phone, orderTime) {
+function sendClientConfirmation () {
 const message = {
     body: `Hello ${orderData.body.name}, Thank you for your Bite Me Burger order.
     This is a confirmation that your order has been accepted. You can pick it up in `,
@@ -23,4 +23,4 @@ const message = {
     })
   };
 
-module.exports = { sendClientConfimation };
+module.exports = { sendClientConfirmation };
