@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 
+// View all orders
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
