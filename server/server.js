@@ -73,7 +73,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/user/orders", (req, res) => {
+app.get("/orders", (req, res) => {
   res.render("orders");
 });
 
