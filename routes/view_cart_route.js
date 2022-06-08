@@ -1,10 +1,9 @@
 const express = require('express');
 const router  = express.Router();
 
-// Restaurant marks order as complete
-// res.json omitted since nothing needs to be displayed
+// View items in a user's cart (prior to submission)
 
-module.exports = (db) => {
+module.exports = (db, userID) => {
   router.post("/", (req, res) => {
     let query = `INSERT INTO orders(order_complete) VALUES(true) WHERE orders.id = ${orderID};`;
 

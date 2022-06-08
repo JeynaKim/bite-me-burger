@@ -1,9 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-
-// View all orders
-
+// Displays all orders, sorts by order ID
 module.exports = (db) => {
   router.get("/", (req, res) => {
     let query = `SELECT * FROM orders LEFT JOIN order_items ON orders.id = order_id;`

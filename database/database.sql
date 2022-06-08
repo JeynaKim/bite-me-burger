@@ -18,7 +18,7 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   users_id INTEGER,
   order_complete BOOLEAN DEFAULT false,
-  created_at TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   estimate_time_minute INTEGER DEFAULT 25,
   started_at TIMESTAMP,
   completed_at TIMESTAMP,
@@ -34,6 +34,9 @@ CREATE TABLE order_items (
   FOREIGN KEY (items_id) REFERENCES items(id),
   FOREIGN KEY (order_id) REFERENCES orders(id)
 );
+
+
+/* GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO www;*/
 
 
 

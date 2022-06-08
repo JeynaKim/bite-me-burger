@@ -42,7 +42,7 @@ const widgetsRoutes = require("../routes/widgets");
 const itemsRoutes = require("../routes/items_route");
 const ordersRoutes = require("../routes/orders_route");
 const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
-//const orderPost = require("../routes/order_post.js")
+const orderPost = require("../routes/order_post.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
 const sendClientConfirmation = require("./twilio/send_sms")
 
@@ -53,8 +53,13 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
 app.use("/user/order", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
+<<<<<<< HEAD
 //app.use("/user/successful_order", orderPost(db))
 // app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
+=======
+app.use("/user/successful_order", orderPost(db))
+app.use("/admin/order/complete", orderCompleteRoutes(db))
+>>>>>>> 414b60e6981583622943db5dd762e4878fded301
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -64,7 +69,6 @@ app.use("/admin/order", restaurauntOrderRoutes(db))
 app.get("/", (req, res) => {
   res.render("index");
 });
-
 
 app.get("/user/orders", (req, res) => {
   res.render("orders");
@@ -83,12 +87,12 @@ app.post("/user/checkout/complete", (req, res) => {
 });
 
 app.get("/user/checkout", (req, res) => {
-res.render("checkout");
+  res.render("checkout");
 });
 
 app.get("/admin", (req, res) => {
-  res.render("admin")
-})
+  res.render("admin");
+});
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

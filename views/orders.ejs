@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/order.css" type="text/css" />
 
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -33,34 +35,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+  <!--Top Nav Bar-->
+  <div class="header">
+    <ul>
+      <li><a href="#"><i class="bx bxs-user"></i>Profile</a></li>
+      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span>(0)</span></a></li>
+    </ul>
+  </div>
+
   <!--Header-->
   <div class="container custom-container">
     <div class="main-header-top">
       <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
       <h2 class="logo-text">Bite Me Burger</h2>
     </div>
-
-    <!--Menu Category-->
-    <div class="menu-category">
-      <h3 class="menu-category-text">My Orders</h3>
-
-    </div>
-
 
     <!--Side Bar-->
     <nav class="sidebar close">
@@ -136,6 +131,45 @@
         </div>
       </div>
     </nav>
+
+    <!--My Order Section-->
+    <div class="order-heading">
+      <h3>Placed Orders</h3>
+    </div>
+
+    <section class="orders">
+      <div class="box-container">
+        <div class="box">
+          <p>placed on : <span>2022-06-08</span></p>
+          <p>name : <span>Jeyna Kim</span></p>
+          <p>number : <span>1234567899</span></p>
+          <p>email : <span>jeyna.kim@gmail.com</span></p>
+          <p>address : <span>1234 Lighthouselab Ave, Toronto, ON M2N 0A8</span></p>
+          <p>your orders : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
+          <p>total price : <span>$20</span></p>
+          <p>payment method : <span>cash on delivery</span></p>
+          <p>payment status : <span>completed</span></p>
+          <p>order placed : <span>12:35pm</span></p>
+          <p>estimated time left : <span>20 minutes</span></p>
+          <p>completed at : <span></span></p>
+        </div>
+
+        <div class="box">
+          <p>placed on : <span>2022-06-08</span></p>
+          <p>name : <span>John Mayer</span></p>
+          <p>number : <span>1234567899</span></p>
+          <p>email : <span>john.mayer@gmail.com</span></p>
+          <p>address : <span>1234 Lighthouselab Ave, Toronto, ON M2N 0A8</span></p>
+          <p>your orders : <span>BiteMe Burger (1), Chicken Sandwich (2)</span></p>
+          <p>total price : <span>$12</span></p>
+          <p>payment method : <span>cash on delivery</span></p>
+          <p>payment status : <span>completed</span></p>
+          <p>order placed : <span>1:20pm</span></p>
+          <p>estimated time left : <span>35 minutes</span></p>
+          <p>completed at : <span></span></p>
+        </div>
+      </div>
+    </section>
 </body>
 
 <script>
