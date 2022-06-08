@@ -1,5 +1,5 @@
 * {
-  font-family: "Kalam", cursive;
+  font-family: "Crimson Text", serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,6 +18,7 @@
   --border: 0.2rem solid var(--black);
 }
 
+// Heading
 .heading {
   background-color: #adb5bd;
   text-align: center;
@@ -26,7 +27,7 @@
   justify-content: center;
   gap: 1rem;
   flex-flow: column;
-  min-height: 6rem;
+  height: 67px;
 }
 
 .heading h3 {
@@ -51,6 +52,7 @@
 
 .title {
   text-align: center;
+  font-size: 18pt;
   margin-top: 56px;
   margin-bottom: 3rem;
   font-size: 4rem;
@@ -60,9 +62,11 @@
   text-underline-offset: 1rem;
 }
 
+// Checkout Form
 .checkout form {
   max-width: 50rem;
   margin: 0 auto;
+  margin-top: 20px;
   border: var(--border);
   padding: 2rem;
 }
@@ -128,7 +132,7 @@
 }
 
 .checkout form .user-info p i {
-  color: var(--light-color);
+  color: black;
   margin-right: 0.7rem;
 }
 
@@ -142,12 +146,14 @@
 }
 
 .checkout form .order-btn {
+  font-size: 20pt;
   margin-top: 2rem;
   width: 100%;
   background-color: var(--black);
-  color: var(--white);
+  color: black;
 }
 
+// Orders Box Cotainer
 .orders .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -171,6 +177,7 @@
 }
 
 .btn {
+  font-size: 17pt;
   background-color: #e9ecef;
   color: black;
   border: 3px solid black;
