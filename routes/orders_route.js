@@ -9,8 +9,8 @@ module.exports = (db) => {
     db.query(query)
     .then(data => {
       console.log(data.rows)
-      const items = data.rows;
-      res.json({ items });
+      const orders = data.rows;
+      res.json({ orders });
     })
     .catch(err => {
       res

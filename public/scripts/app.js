@@ -17,6 +17,7 @@ const getAllOrders = () => {
     success: (result) => {
       console.log('result:', result)
       const orders = result.orders;
+      console.log('orders:', orders)
       for (const order of orders) {
         $(".order-items").append(renderOrderItems(order));
       }
@@ -32,15 +33,12 @@ const renderOrderItems = (order) => {
   const $orderList = `
             <div class="box-container">
               <div class="box">
-                <p>placed on : <span>2022-06-08</span></p>
-                <p>name : ${order.user_id}</span>
-                <p>your orders : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-                <p>total price : <span>$20</span></p>
-                <p>payment method : <span>cash on delivery</span></p>
-                <p>payment status : <span>completed</span></p>
-                <p>order placed : <span>12:35pm</span></p>
-                <p>estimated time left : <span>20 minutes</span></p>
-                <p>completed at : <span></span></p>
+                <p>placed on: ${order.created_at} <span></span></p>
+                <p>your orders: <span></span></p>
+                <p>total price: <span></span></p>
+                <p>payment status:${order.bill_paid} <span></span></p>
+                <p>estimated time left : <span></span></p>
+                <p>completed at: ${order.completed_at} <span></span></p>
               </div>
 
               </div>
