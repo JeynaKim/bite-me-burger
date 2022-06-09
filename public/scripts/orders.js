@@ -15,14 +15,15 @@ $(() => {
 
 const getAllOrders = () => {
   $.ajax({
-    url: "/user/orders",
+    url: "/user/view_cart",
     type: "GET",
     success: (result) => {
-      for (const order of result.orders) {
-        if (order.users_id === 1) {
-        $(".box-container").append(renderOrderItems(order));
-        }
-      }
+     // for (const order of result.orders) {
+       // if (order.users_id === 1) {
+         console.log(result )
+        $(".box-container").append(renderOrderItems(result));
+       // }
+     // }
     },
     error: (err) => {
       console.log("error:", err.message);
@@ -31,6 +32,7 @@ const getAllOrders = () => {
 };
 
 const renderOrderItems = (order) => {
+  console.log(order)
   const $orderList = `
               <div class="box">
               <p>Name: <span>${order.whole_name}</span></p>
@@ -40,7 +42,6 @@ const renderOrderItems = (order) => {
                 <p>Total price: <span>${order.price}</span></p>
                 <p>Order placed: <span>${order.created_at}</span></p>
 
-                <p>Completed at: <span>${order.completed_at}</span></p>
               </div>
             `;
   return $orderList;
