@@ -19,7 +19,9 @@ const getAllOrders = () => {
       const orders = result.orders;
       console.log('orders:', orders)
       for (const order of orders) {
+        if (order.users_id === 1) {
         $(".order-items").append(renderOrderItems(order));
+        }
       }
     },
     error: (err) => {
@@ -29,16 +31,15 @@ const getAllOrders = () => {
 };
 
 const renderOrderItems = (order) => {
-  console.log(order);
+  console.log('order123:', order);
   const $orderList = `
             <div class="box-container">
               <div class="box">
-                <p>placed on: ${order.created_at} <span></span></p>
-                <p>your orders: <span></span></p>
-                <p>total price: <span></span></p>
-                <p>payment status:${order.bill_paid} <span></span></p>
-                <p>estimated time left : <span></span></p>
-                <p>completed at: ${order.completed_at} <span></span></p>
+                <p>Placed on: ${order.created_at} <span></span></p>
+                <p>Your orders: ${order.item_name}  <span></span></p>
+                <p>Total price: $${order.price} </p>
+                <p>Estimated time left: <span></span></p>
+                <p>Completed at: ${order.completed_at} <span></span></p>
               </div>
 
               </div>
