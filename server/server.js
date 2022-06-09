@@ -45,7 +45,7 @@ const restaurauntOrderRoutes = require("../routes/restaurant_order_route")
 const addToCart = require("../routes/add_to_cart.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
 const viewCart = require("../routes/view_cart.js")
-const { sendClientConfirmation, sendAdminOrder } = require("./twilio/send_sms");
+const { sendClientConfirmation, sendAdminOrder, updateClientTime } = require("./twilio/send_sms");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -71,6 +71,11 @@ app.get("/orders", (req, res) => {
 });
 
 app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+
+app.post("/admin", (req, res) => {
+  updateClientTime(req.body.name);
   res.render("admin");
 });
 

@@ -1,8 +1,7 @@
 const accountSid = 'AC3207fceb06028f25b2d0977dbece3091';
-const authToken = '05bd8f7a63160926279dc3b17ed149ab';
+const authToken = 'a6bffd7ab09647189f4990a6af50ec2c';
 const twilioPhone = '+19108386143';
 const recipient = '+16475807372';
-
 const client = require('twilio')(accountSid, authToken);
 
 function sendClientConfirmation() {
@@ -22,13 +21,13 @@ function sendAdminOrder() {
   })
 }
 
-function updateClientTime() {
+function updateClientTime(time) {
   return client.messages.create({
-    body: `Your order will be ready for pickup in `,
+    body: `Your order will be ready for pickup in ${time} minutes. `,
     from: twilioPhone,
     to: recipient
   })
 }
 
 
-module.exports = { sendClientConfirmation, sendAdminOrder };
+module.exports = { sendClientConfirmation, sendAdminOrder, updateClientTime };
