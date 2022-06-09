@@ -7,9 +7,14 @@ const router  = express.Router();
 module.exports = (db) => {
   router.post("/", (req, res) => {
     let query = `INSERT INTO orders(order_complete) VALUES(true) WHERE orders.id = ${req.body.orders.id};`;
-
-    db.query(query);
-    // res.sendStatus(200) ---> HAVE TO RE-DIRECT TO ORDERS PAGE, IF FAILS RES.SENDSTATUS(400);
+    db.query(query)
+    .then(data => {
+      res.sendStatus(200);
+      res.redirect("/admin/order");
+    })
+    .catch(err => {
+      res.sendStatus(400);
+    })
   })
   return router;
 }

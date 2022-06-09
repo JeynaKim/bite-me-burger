@@ -21,22 +21,24 @@
 
 // Heading
 .heading {
-  background-color: #adb5bd;
+  background-color: #f4d35e;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   flex-flow: column;
-  height: 67px;
+  height: 80px;
   max-width: 1200px;
   margin: auto;
 }
 
 .heading h3 {
+  font-family: "Gochi Hand", cursive;
   font-size: 4rem;
   color: var(--white);
   text-transform: capitalize;
+  margin-top: 17px;
 }
 
 .heading p a {
@@ -55,7 +57,7 @@
 
 .title {
   text-align: center;
-  font-size: 40px;
+  font-size: 46px;
   margin-bottom: 3rem;
   color: var(--black);
   text-transform: uppercase;
@@ -63,130 +65,3 @@
   text-underline-offset: 1rem;
 }
 
-// // Checkout Form
-// .checkout form {
-//   max-width: 50rem;
-//   margin: 0 auto;
-//   margin-top: 20px;
-//   border: var(--border);
-//   padding: 2rem;
-// }
-
-// .checkout form .cart-items {
-//   background-color: var(--lightyellow);
-//   padding: 2rem;
-// }
-
-// .checkout form .cart-items h3 {
-//   font-size: 2.5rem;
-//   color: var(--black);
-//   text-transform: capitalize;
-//   margin-bottom: 2rem;
-// }
-
-// .checkout form .cart-items p {
-//   display: flex;
-//   gap: 1.5rem;
-//   align-items: center;
-//   justify-content: space-between;
-//   margin: 1rem 0;
-//   line-height: 1.5;
-//   font-size: 2rem;
-// }
-
-// .checkout form .cart-items p .name {
-//   color: var(--black);
-// }
-
-// .checkout form .cart-items p .price {
-//   color: var(--white);
-// }
-
-// .checkout form .cart-items .grand-total {
-//   background-color: var(--white);
-//   padding: 1rem;
-// }
-
-// .checkout form .cart-items .grand-total .name {
-//   color: var(--black);
-// }
-
-// .checkout form .cart-items .grand-total .price {
-//   color: var(--red);
-// }
-
-// .checkout form .user-info h3 {
-//   font-size: 2.5rem;
-//   margin: 2rem 0;
-//   color: var(--black);
-//   text-transform: capitalize;
-// }
-
-// .checkout form .user-info p {
-//   line-height: 1.5;
-//   font-size: 2rem;
-//   margin: 1rem 0;
-// }
-
-// .checkout form .user-info p span {
-//   color: var(--black);
-// }
-
-// .checkout form .user-info p i {
-//   color: black;
-//   margin-right: 0.7rem;
-// }
-
-// .checkout form .user-info .box {
-//   width: 100%;
-//   border: 4px solid black;
-//   padding: 1.4rem;
-//   color: var(--black);
-//   font-size: 1.8rem;
-//   margin-top: 2rem;
-// }
-
-// .checkout form .order-btn {
-//   font-size: 20pt;
-//   margin-top: 2rem;
-//   width: 100%;
-//   background-color: var(--black);
-//   color: black;
-// }
-
-// // Orders Box Cotainer
-// .orders .box-container {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-//   gap: 1.5rem;
-//   align-items: flex-start;
-// }
-
-// .orders .box-container .box {
-//   border: var(--border);
-//   padding: 1rem 2rem;
-// }
-
-// .orders .box-container .box p {
-//   font-size: 2rem;
-//   color: var(--light-color);
-//   line-height: 2;
-// }
-
-// .orders .box-container .box p span {
-//   color: var(--black);
-// }
-
-// .btn {
-//   font-size: 17pt;
-//   background-color: #e9ecef;
-//   color: black;
-//   border: 3px solid black;
-// }
-
-// .checkout-burger-logo {
-//   width: 65px;
-//   margin-right: 20px;
-//   cursor: pointer;
-//   text-align: center;
-// }
