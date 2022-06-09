@@ -32,7 +32,6 @@ module.exports = (db) => {
     }
     db.query('BEGIN', err => {
       if (shouldAbort(err)) return
-
      // db.query(query1, [whole_name, phone_number, email], (err, firstResponse) => {
       //  if (shouldAbort(err)) return
         console.log(`userID: ${firstResponse.rows[0].id}`)
