@@ -6,22 +6,16 @@
 // Function getAllItems: GET our burger menu's information(name,price,description) from the database
 
 $(() => {
-  getAllOrders();
-  // $(".order-status").on("click", function (e) {
-  //   e.preventDefault();
-  //   $(".choose-order").text("");
-  // });
+  getAllIncompleteOrders();
 });
 
-const getAllOrders = () => {
+const getAllIncompleteOrders = () => {
   $.ajax({
-    url: "/user/orders",
+    url: "/admin/orders",
     type: "GET",
     success: (result) => {
       for (const order of result.orders) {
-        if (order.users_id === 1) {
-        $(".box-container").append(renderOrderItems(order));
-        }
+        $(".incomplete-orders").append(renderIncompleteOrderItems(order));
       }
     },
     error: (err) => {
@@ -30,16 +24,15 @@ const getAllOrders = () => {
   });
 };
 
-const renderOrderItems = (order) => {
+const renderIncompleteOrderItems = (order) => {
   const $orderList = `
               <div class="box">
-              <p>Name: <span>${order.whole_name}</span></p>
-              <p>Email: <span>${order.email}</span></p>
-              <p>Phone number: <span>${order.phone_number}</span></p>
-                <p>Your orders: <span> ${order.item_name} </span></p>
+              <p>Customer name: <span>${order.whole_name}</span></p>
+              <p>Customer email: <span>${order.email}</span></p>
+              <p>Customer phone number: <span>${order.phone_number}</span></p>
+                <p>Customer order: <span> ${order.item_name} </span></p>
                 <p>Total price: <span>${order.price}</span></p>
                 <p>Order placed: <span>${order.created_at}</span></p>
-
                 <p>Completed at: <span>${order.completed_at}</span></p>
               </div>
             `;

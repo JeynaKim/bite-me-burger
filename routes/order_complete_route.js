@@ -42,8 +42,8 @@ module.exports = (db) => {
             if (err) {
               console.error('Error committing transaction', err.stack)
             }
-            
           })
+          
           const lengthOfItem = (JSON.parse(items)).length
           let index = 1
           for (const item of JSON.parse(items)) {
@@ -58,20 +58,11 @@ module.exports = (db) => {
                     console.error('Error committing transaction', err.stack)
                   }
                    return res.send(`Success`)
-
-
                 })
-
               }
               index++
-
-
             })
-
-
           }
-
-
         })
       })
     })
@@ -84,16 +75,4 @@ module.exports = (db) => {
 
 
 
-//     db.query(query)
-//     .then(data => {
 
-//       res.sendStatus(200);
-//       res.redirect("/orders");
-//     })
-//     .catch(err => {
-//       res.sendStatus(400);
-//     })
-
-//   })
-//   return router;
-// }
