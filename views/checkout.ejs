@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/cart.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -145,52 +146,33 @@
 
     <section class="checkout">
       <h1 class="title">order summary</h1>
-      <form action="/user/checkout/complete" method="post">
+        <h3><strong><img
+              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
+              class="checkout-burger-logo" />Items in your cart . . .</strong></h3>
         <div class="cart-items">
-          <h3><strong><img
-                src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-                class="checkout-burger-logo" />Items in your cart . . .</strong></h3>
-          <p><span class="name">BiteMe Burger x 1</span>
-            <span class="price">$5</span>
-          </p>
-          <p>
-            <span class="name">BiteMe Combo x 2</span>
-            <span class="price">$5</span>
-          </p>
-          <p>
-            <span class="name">Chicken Sandwich x 1</span>
-            <span class="price">$5</span>
-          </p>
-          <p class="grand-total">
-            <span class="name">Order Total :</span>
-            <span class="price">$15</span>
-          </p>
-          <a href="cart.html" class="btn">view cart</a>
-        </div>
+          <ul class="cart_items">
 
-        <div class="user-info">
-          <h3>Personal Information</h3>
-          <p><i class="fas fa-user"></i> <span>Jeyna Kim</span></p>
-          <p><i class="fas fa-phone"></i> <span>647-000-0000</span></p>
-          <p>
-            <i class="fas fa-envelope"></i> <span>jeyna.kim@gmail.com</span>
-          </p>
-          <a href="#" class="btn">update info</a>
-          <h3>Delivery Address</h3>
-          <p class="address">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>1234 Lighthouselab Ave, Toronto, ON M2N 0A8</span>
-          </p>
-          <a href="#" class="btn">update address</a>
-          <select name="method" class="box" required>
-            <option value="" disabled selected>select payment method</option>
-            <option value="cash on delivery">cash on delivery</option>
-            <option value="credit card">credit card</option>
-            <option value="paypal">paypal</option>
-          </select>
+          </ul>
         </div>
-        <input type="submit" value="Place Order" name="order" class="btn order-btn" />
-      </form>
+        <div class="user-info">
+          <form class="place_order_form" style="background-color: black;">
+              <label for="user_name"></label>
+              <input name="user_name" type="text" name="" id="">
+              <label for="user_phone_number"></label>
+              <input name="user_phone_number" type="text" name="" id="">
+              <label for="user_email"></label>
+              <input name="user_email" type="text" name="" id="">
+              <label for="user_address"></label>
+              <textarea name="user_address" id="" cols="30" rows="10"></textarea>
+              <select name="method" class="box" required>
+                <option value="" disabled selected>select payment method</option>
+                <option value="cash on delivery">cash on delivery</option>
+                <option value="credit card">credit card</option>
+                <option value="paypal">paypal</option>
+              </select>
+              <input type="submit" value="Place Order" name="order" class="btn order-btn" />
+          </form>
+        </div>
     </section>
      <!--Footer-->
      <footer class="footer">

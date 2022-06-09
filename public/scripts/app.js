@@ -7,65 +7,27 @@
 
 $(() => {
   getAllItems();
-  getAllOrders();
-  $(".order-status").on("click", function (e) {
-    e.preventDefault();
-    $(".choose-order").text("");
-  });
 });
 
-const getAllOrders = () => {
-  $.ajax({
-    url: "/user/order",
-    type: "GET",
-    success: (result) => {
-      console.log(result);
-      const orders = result.items;
-      for (const order of result.items) {
-        console.log(order);
-        $(".order-items").append(renderOrderItems(order));
-      }
-    },
-    error: (err) => {
-      console.log("error:", err.message);
-    },
-  });
-};
-
 const getAllItems = () => {
-  $.ajax({
-    url: "/user/items",
-    type: "GET",
-    success: (result) => {
+  $.get("/user/items")
+    .then((result) => {
       const items = result.items;
       for (const item of items) {
         $(".choose-order").append(renderMenuItems(item));
       }
-    },
-    error: (err) => {
+    })
+    .then((response) => {
+      $(".cart-add-button").on("click", function () {
+        const itemId = $(this).find(".item_id").val();
+        const itemQuantity = $(this).parent().parent().parent().find(".item_quantity").val();
+        console.log(itemQuantity);
+        localStorage.setItem(itemId, itemQuantity);
+      });
+    })
+    .catch((err) => {
       console.log("ERROR", err.message);
-    },
-  });
-};
-
-const renderOrderItems = (order) => {
-  console.log(order);
-  const $orderList = `
-            <div class="box-container">
-              <div class="box">
-                <p>placed on : <span>2022-06-08</span></p>
-                <p>name : ${order.user_id}</span>
-                <p>your orders : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-                <p>total price : <span>$20</span></p>
-                <p>payment method : <span>cash on delivery</span></p>
-                <p>payment status : <span>completed</span></p>
-                <p>order placed : <span>12:35pm</span></p>
-                <p>estimated time left : <span>20 minutes</span></p>
-                <p>completed at : <span></span></p>
-              </div>
-              </div>
-            </div>
-            `;
+    });
 };
 
 const renderMenuItems = (item) => {
@@ -80,14 +42,15 @@ const renderMenuItems = (item) => {
 
     <div class="food-card-footer">
       <div class="quantity">
-        <input type="number" value="1" min="0" max="100" step="1"/>
+        <input class="item_quantity" type="number" value="1" min="0" max="100" step="1"/>
       </div>
       <div class="d-flex align-items-center">
         <div>
           <h3 class="mb-0">$${item.price}</h3>
         </div>
         <div>
-          <button class="cards-icon-container btn btn-light">
+          <button class="cards-icon-container btn btn-light cart-add-button">
+            <input class="item_id" type="hidden" name="item_id" value="${item.id}">
             <i class="bx bx-cart" type="button" name="select" value="addToCart"></i>
           </button>
         </div>
