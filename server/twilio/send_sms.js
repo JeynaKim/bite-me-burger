@@ -7,11 +7,28 @@ const client = require('twilio')(accountSid, authToken);
 
 function sendClientConfirmation() {
   return client.messages.create({
-    body: `Hello, Thanks for ordering with Bite Me Burger. Your food will be ready for pickup in 30 minutes.`,
+    body: `Hello, Thanks for ordering with Bite Me Burger. Your order has been confirmed.`,
     from: twilioPhone,
     to: recipient
   })
 }
 
 
-module.exports = { sendClientConfirmation };
+function sendAdminOrder() {
+  return client.messages.create({
+    body: `You have a new order for Bite Me Burger. Please login to view the order`,
+    from: twilioPhone,
+    to: recipient
+  })
+}
+
+function updateClientTime() {
+  return client.messages.create({
+    body: `Your order will be ready for pickup in ${}`,
+    from: twilioPhone,
+    to: recipient
+  })
+}
+
+
+module.exports = { sendClientConfirmation, sendAdminOrder };
