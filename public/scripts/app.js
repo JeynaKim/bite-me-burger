@@ -9,6 +9,7 @@ $(() => {
   getAllItems();
   reduceItemQuantity();
   increaseItemQuantity();
+
 });
 
 const reduceItemQuantity = () => {
@@ -49,6 +50,8 @@ const getAllItems = () => {
       console.log("ERROR", err.message);
     });
 };
+
+
 
 const renderMenuItems = (item) => {
 
