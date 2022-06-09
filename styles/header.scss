@@ -23,7 +23,7 @@
 
 .logo-text {
   font-family: "Gochi Hand", cursive;
-  font-size: 75px;
+  font-size: 98px;
 }
 
 .blinking-animation {
@@ -60,6 +60,7 @@
 }
 
 .menu-category-text {
+  font-family: 'Gochi Hand', cursive;
   text-align: center;
   margin-top: 20px;
   font-size: 1.5rem;
@@ -78,4 +79,13 @@ input[type=number]::-webkit-outer-spin-button {
   -moz-appearance: none;
   appearance: none;
   text-align: center;
+}
+
+.card-body {
+font-family: "Gochi Hand", cursive;
+font-size: 34px;
+}
+
+.card {
+border: 3.5px solid #333533;
 }
