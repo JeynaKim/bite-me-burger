@@ -7,10 +7,6 @@
 
 $(() => {
   getAllOrders();
-  // $(".order-status").on("click", function (e) {
-  //   e.preventDefault();
-  //   $(".choose-order").text("");
-  // });
 });
 
 const getAllOrders = () => {
@@ -18,12 +14,8 @@ const getAllOrders = () => {
     url: "/user/view_cart",
     type: "GET",
     success: (result) => {
-     // for (const order of result.orders) {
-       // if (order.users_id === 1) {
-         console.log(result )
+      console.log(result)
         $(".box-container").append(renderOrderItems(result));
-       // }
-     // }
     },
     error: (err) => {
       console.log("error:", err.message);

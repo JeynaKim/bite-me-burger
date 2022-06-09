@@ -56,7 +56,7 @@ module.exports = (db) => {
                   if (err) {
                     console.error('Error committing transaction', err.stack)
                   }
-                   return res.send(`Success`)
+                  return res.send(`Success`)
                 })
               }
               index++

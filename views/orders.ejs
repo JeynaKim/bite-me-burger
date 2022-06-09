@@ -21,9 +21,13 @@
   <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
   <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/order.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
 
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Fontawesom Library-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/orders.js"></script>
@@ -40,10 +44,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
-</head>
+  </head>
 
-<body>
-
+  <body>
   <!--Top Nav Bar-->
   <div class="header">
     <ul>
@@ -142,28 +145,26 @@
     <section class="orders">
       <div class="box-container">
 
-        <!--orders.js: GET our users order information from the database-> -->
-
-
+<!--orders.js: GET our users order information from the database-> -->
 </body>
 
 <script>
-  const body = document.querySelector("body"),
+    const body = document.querySelector("body"),
     sidebar = body.querySelector("nav"),
     toggle = body.querySelector(".toggle"),
     searchBtn = body.querySelector(".search-box"),
     modeSwitch = body.querySelector(".toggle-switch"),
     modeText = body.querySelector(".mode-text");
 
-  toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
   });
 
-  searchBtn.addEventListener("click", () => {
+    searchBtn.addEventListener("click", () => {
     sidebar.classList.remove("close");
   });
 
-  modeSwitch.addEventListener("click", () => {
+    modeSwitch.addEventListener("click", () => {
     body.classList.toggle("dark");
 
     if (body.classList.contains("dark")) {
@@ -172,6 +173,5 @@
       modeText.innerText = "Dark mode";
     }
   });
-</script>
-
+  </script>
 </html>

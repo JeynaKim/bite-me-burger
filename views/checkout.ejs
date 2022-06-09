@@ -53,7 +53,7 @@
   <div class="header">
     <ul>
       <li><a href="#"><i class="bx bxs-user"></i>Profile</a></li>
-      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span>(0)</span></a></li>
+      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span class="cart_display_qty">(0)</span></a></li>
     </ul>
   </div>
 
@@ -177,6 +177,7 @@
           </form>
         </div>
     </section>
+
      <!--Footer-->
      <footer class="footer">
       <section class="box-container">
@@ -203,29 +204,29 @@
         <div class="box">
           <i class='bx bxs-phone-call'></i>
           <h3>Contact Us!</h3>
-          <a href="tel:1234567890">+1-647-000-0000</a>
+          <a href="#">+1-647-000-0000</a>
         </div>
       </section>
     </footer>
-</body>
+  </body>
 
-<script>
-  const body = document.querySelector("body"),
+  <script>
+    const body = document.querySelector("body"),
     sidebar = body.querySelector(".sidebar"),
     toggle = body.querySelector(".toggle"),
     searchBtn = body.querySelector(".search-box"),
     modeSwitch = body.querySelector(".toggle-switch"),
     modeText = body.querySelector(".mode-text");
 
-  toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
   });
 
-  searchBtn.addEventListener("click", () => {
+    searchBtn.addEventListener("click", () => {
     sidebar.classList.remove("close");
   });
 
-  modeSwitch.addEventListener("click", () => {
+    modeSwitch.addEventListener("click", () => {
     body.classList.toggle("dark");
 
     if (body.classList.contains("dark")) {
@@ -234,6 +235,5 @@
       modeText.innerText = "Dark mode";
     }
   });
-</script>
-
-</html>
+  </script>
+  </html>

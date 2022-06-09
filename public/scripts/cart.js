@@ -37,8 +37,8 @@ $(() => {
     for (const key of Object.keys(localStorage)) {
       const quantity = localStorage.getItem(key);
       if (quantity > 0) {
-       // data[key] = localStorage.getItem(key);
-       items.push({id: key, quantity:localStorage.getItem(key)})
+        // data[key] = localStorage.getItem(key);
+        items.push({ id: key, quantity: localStorage.getItem(key) })
       }
     }
     data.items = items

@@ -22,10 +22,8 @@
   <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
 
-
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-
 
   <!-- Fontawesom Library-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -82,15 +80,15 @@
   <div class="card mx-auto text-center" style="width: 1100px;">
     <div class="card-body">Menu Selection</div>
   </div>
-  <!-- <h3 class="choose-order-text">Menu Selection</h3> -->
   <div class="menu-items">
     <div class="food-boxes container">
       <div class="choose-order row">
       </div>
       <div class="row">
-        <!--app.js: GET our burger menu's information(name,price,description) from the database-> -->
 
-        <!--Side Bar -->
+       <!--app.js: GET our burger menu's information(name,price,description) from the database -->
+
+  <!--Side Bar -->
         <nav class="sidebar close">
           <header>
             <div class="image-text">
@@ -164,6 +162,7 @@
             </div>
           </div>
         </nav>
+
         <!--Footer-->
         <footer class="footer">
           <section class="box-container">
@@ -193,36 +192,33 @@
             </div>
           </section>
         </footer>
-
-
         <div class="order-items"></div>
-</body>
+      </body>
 
-<script>
-  const body = document.querySelector("body"),
-    sidebar = body.querySelector(".sidebar"),
-    toggle = body.querySelector(".toggle"),
-    searchBtn = body.querySelector(".search-box"),
-    modeSwitch = body.querySelector(".toggle-switch"),
-    modeText = body.querySelector(".mode-text");
+      <script>
+        const body = document.querySelector("body"),
+        sidebar = body.querySelector(".sidebar"),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
 
-  toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
-  });
+        toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+      });
 
-  searchBtn.addEventListener("click", () => {
-    sidebar.classList.remove("close");
-  });
+        searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+      });
 
-  modeSwitch.addEventListener("click", () => {
-    body.classList.toggle("dark");
+        modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
 
-    if (body.classList.contains("dark")) {
-      modeText.innerText = "Light mode";
-    } else {
-      modeText.innerText = "Dark mode";
-    }
-  });
-</script>
-
+        if (body.classList.contains("dark")) {
+          modeText.innerText = "Light mode";
+        } else {
+          modeText.innerText = "Dark mode";
+        }
+      });
+      </script>
 </html>

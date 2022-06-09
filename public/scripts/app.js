@@ -62,8 +62,6 @@ const getAllItems = () => {
     });
 };
 
-
-
 const renderMenuItems = (item) => {
 
   const $itemList = `
