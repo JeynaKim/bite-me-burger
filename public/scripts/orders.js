@@ -15,11 +15,13 @@ $(() => {
 
 const getAllOrders = () => {
   $.ajax({
-    url: "/user/order",
+    url: "/user/orders",
     type: "GET",
     success: (result) => {
-      for (const order of result.items) {
+      for (const order of result.orders) {
+        if (order.users_id === 1) {
         $(".box-container").append(renderOrderItems(order));
+        }
       }
     },
     error: (err) => {
@@ -31,14 +33,12 @@ const getAllOrders = () => {
 const renderOrderItems = (order) => {
   const $orderList = `
               <div class="box">
-                <p>placed on : <span>${order.created_at}</span></p>
-                <p>name : ${order.user_id}</span>
-                <p>your orders : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-                <p>total price : <span>${order.price}</span></p>
-                <p>payment method : <span>cash on delivery</span></p>
-                <p>payment status : <span>${order.message}</span></p>
-                <p>order placed : <span>${order.created_at}</span></p>
-                <p>completed at : <span>${order.completed_at}</span></p>
+                <p>Placed on: <span>${order.created_at}</span></p>
+                <p>Your orders: <span> ${order.item_name} </span></p>
+                <p>Total price: <span>${order.price}</span></p>
+                <p>Payment method: <span></span></p>
+                <p>Order placed: <span>${order.created_at}</span></p>
+                <p>Completed at: <span>${order.completed_at}</span></p>
               </div>
             `;
   return $orderList;
