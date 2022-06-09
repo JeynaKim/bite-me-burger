@@ -33,11 +33,13 @@ const getAllOrders = () => {
 const renderOrderItems = (order) => {
   const $orderList = `
               <div class="box">
-                <p>Placed on: <span>${order.created_at}</span></p>
+              <p>Name: <span>${order.whole_name}</span></p>
+              <p>Email: <span>${order.email}</span></p>
+              <p>Phone number: <span>${order.phone_number}</span></p>
                 <p>Your orders: <span> ${order.item_name} </span></p>
                 <p>Total price: <span>${order.price}</span></p>
-                <p>Payment method: <span></span></p>
                 <p>Order placed: <span>${order.created_at}</span></p>
+
                 <p>Completed at: <span>${order.completed_at}</span></p>
               </div>
             `;
