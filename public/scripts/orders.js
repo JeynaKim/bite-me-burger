@@ -19,6 +19,7 @@ const getAllOrders = () => {
     type: "GET",
     success: (result) => {
       for (const order of result.items) {
+        console.log(order);
         $(".box-container").append(renderOrderItems(order));
       }
     },
