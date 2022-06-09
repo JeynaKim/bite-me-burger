@@ -5,6 +5,7 @@ $(() => {
     const items = result.items;
     // const
     let cartTotal = 0;
+
     for (const item of items) {
       const quantity = localStorage.getItem(item.id);
       if (quantity > 0) {
@@ -13,8 +14,8 @@ $(() => {
             <li class="list-group-item list-group-item-secondary">${item.item_name} - $${item.price} x ${quantity}</li>
           `
         );
+        cartTotal += Number(item.price);
       }
-      cartTotal += Number(item.price);
     }
     $(".cart_items").append(
       `
@@ -29,21 +30,17 @@ $(() => {
   $(".place_order_form").on("submit", function(e) {
     e.preventDefault();
     const userInfo = $(this).serialize();
-    const data = { userInfo: userInfo };
+    const data = { "user-info": userInfo };
     console.log(data);
-    const items = [];
-
     for (const key of Object.keys(localStorage)) {
       const quantity = localStorage.getItem(key);
       if (quantity > 0) {
-       // data[key] = localStorage.getItem(key);
-       items.push({id: key, quantity:localStorage.getItem(key)})
+        data[key] = localStorage.getItem(key);
       }
     }
-    data.items = items
-    console.log(data.items)
-    $.post("/admin/order/complete", userInfo + "&items=" + JSON.stringify(items))
+    $.post("/admin/order/complete", data)
     .then(response => {
+      console.log(response);
       window.location.replace("/orders");
     })
     .catch(error => {
