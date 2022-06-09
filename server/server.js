@@ -52,7 +52,7 @@ const { sendClientConfirmation } = require("./twilio/send_sms");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
-app.use("/user/order", ordersRoutes(db))
+app.use("/user/orders", ordersRoutes(db))
 app.use("/admin/order", restaurauntOrderRoutes(db))
 app.use("/user/successful_order", addToCart(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
