@@ -14,7 +14,7 @@ $(() => {
             <li class="list-group-item list-group-item-secondary">${item.item_name} - $${item.price} x ${quantity}</li>
           `
         );
-        cartTotal += Number(item.price);
+        cartTotal += Number(item.price * quantity);
       }
     }
     $(".cart_items").append(
@@ -45,7 +45,7 @@ $(() => {
     console.log(data.items)
     $.post("/admin/order/complete", userInfo + "&items=" + JSON.stringify(items))
     .then(response => {
-      console.log(response);
+      localStorage.clear();
       window.location.replace("/orders");
     })
     .catch(error => {
