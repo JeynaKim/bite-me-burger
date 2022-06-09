@@ -2,18 +2,20 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  border: 2px solid black;
 }
 
 .footer .box-container {
   display: flex;
   align-items: flex-start;
+  border-top: 2px solid black;
+  margin-top: 78px;
 }
 
 .footer .box-container .box {
   text-align: center;
   padding: 2rem;
   border: black;
+  width: 285px;
 }
 
 .footer .box-container .box img {

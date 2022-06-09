@@ -143,34 +143,40 @@
     <div class="heading">
       <h3>checkout</h3>
     </div>
-
     <section class="checkout">
       <h1 class="title">order summary</h1>
-        <h3><strong><img
-              src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-              class="checkout-burger-logo" />Items in your cart . . .</strong></h3>
-        <div class="cart-items">
-          <ul class="cart_items">
-
+        <h3><strong>Items in your cart . . .</strong></h3>
+        <div class="cart-items mb-3">
+          <ul class="list-group cart_items" >
           </ul>
         </div>
         <div class="user-info">
-          <form class="place_order_form" style="background-color: black;">
-              <label for="user_name"></label>
-              <input name="user_name" type="text" name="" id="">
-              <label for="user_phone_number"></label>
-              <input name="user_phone_number" type="text" name="" id="">
-              <label for="user_email"></label>
-              <input name="user_email" type="text" name="" id="">
-              <label for="user_address"></label>
-              <textarea name="user_address" id="" cols="30" rows="10"></textarea>
-              <select name="method" class="box" required>
+          <form class="place_order_form">
+            <div class="mb-3">
+              <label for="user_name" class="form-label">User Name</label>
+              <input name="user_name" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="user_email" class="form-label">User Email</label>
+              <input name="user_email" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="user_address" class="form-label">User Address</label>
+              <input name="user_address" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="user_phone_number" class="form-label">User Phone Number</label>
+              <input name="user_phone_number" class="form-control">
+            </div>
+            <div class="mb-3">
+              <select name="method" class="box form-select" required>
                 <option value="" disabled selected>select payment method</option>
                 <option value="cash on delivery">cash on delivery</option>
                 <option value="credit card">credit card</option>
                 <option value="paypal">paypal</option>
               </select>
-              <input type="submit" value="Place Order" name="order" class="btn order-btn" />
+            </div>
+              <input type="submit" value="Place Order" name="order" class="btn order-btn btn-primary" />
           </form>
         </div>
     </section>

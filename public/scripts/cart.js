@@ -10,7 +10,7 @@ $(() => {
       if (quantity > 0) {
         $(".cart_items").append(
           `
-            <li>${item.item_name} - $${item.price} x ${quantity}</li>
+            <li class="list-group-item list-group-item-secondary">${item.item_name} - $${item.price} x ${quantity}</li>
           `
         );
       }
@@ -18,7 +18,7 @@ $(() => {
     }
     $(".cart_items").append(
       `
-        <li>Total: $${cartTotal}</li>
+        <li class="list-group-item list-group-item-primary">Total: $${cartTotal}</li>
       `
     );
   })
@@ -29,7 +29,8 @@ $(() => {
   $(".place_order_form").on("submit", function(e) {
     e.preventDefault();
     const userInfo = $(this).serialize();
-    const data = {"user-info": userInfo};
+    const data = { "user-info": userInfo };
+    console.log(data);
     for (const key of Object.keys(localStorage)) {
       const quantity = localStorage.getItem(key);
       if (quantity > 0) {
