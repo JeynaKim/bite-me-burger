@@ -1,9 +1,9 @@
 INSERT INTO items(price, item_name, item_photo_url, item_description)
-VALUES (7, 'BaconXXL® Burger', 'images/burger1.png', 'Two beef patties with extra strips of crispy bacon and cheddar cheese.'),
+VALUES (7, 'BaconXXL® Burger', 'images/burger1.png', 'Two of our classic beef patties with extra strips of crispy bacon and cheddar cheese. Made with 100% Canadian beef.'),
 (7, 'BiteMe''s Double® Burger', 'images/burger2.png', 'Two beef patties topped with cheddar cheese, onions, tomatoes, and lettuce.'),
 (5, 'Classic Chicken Sandwich Burger', 'images/burger3.png', 'Crispy fried chicken served with lettuce, tomatoes, pickles, and house sauce.'),
-(5, 'Spicy Chicken Sandwich Burger', 'images/burger4.png', 'Our famous tender fried chicken seasoned with a blend of 5 spices.'),
-(11, 'BaconXXL® Combo', 'images/set-menu1.png', 'Our famously BIG BaconXXL® burger served with fries and a medium soft drink of your choice.'),
+(5, 'Spicy Chicken Sandwich Burger', 'images/burger4.png', 'Our mouth-watering Chicken Burger infused with a blend of 5 spices.'),
+(11, 'BaconXXL® Combo', 'images/set-menu1.png', 'Celebrate Canadian cattle farmers with our famously BIG and juicy BaconXXL® burger served with fries and a medium soft drink of your choice.'),
 (11, 'BiteMe''s Double® Combo', 'images/set-menu2.png', 'Fill up with our familiar BiteMe''s Double® Burger. Comes with fries and a medium soft drink of your choice.'),
 (9, 'Classic Chicken Sandwich Combo', 'images/set-menu3.png', 'Treat yourself to our Classic Chicken Sandwich! Served with fries and a soft drink of your choice.'),
 (9, 'Spicy Chicken Sandwich Combo', 'images/set-menu4.png', 'Take the spice of our Spicy Chicken Sandwich to the next level with a side of fries and soft drink of your choice.');
