@@ -1,5 +1,4 @@
 const express = require('express');
-
 const router = express.Router();
 
 // ADMIN SIDE: Restauraunt views all incomplete orders
@@ -9,16 +8,17 @@ module.exports = (db) => {
     let query = `
     SELECT *
     FROM orders
-    JOIN order_items ON order_id = orders.id
-    JOIN users ON users_id = users.id
+    JOIN order_items ON order_items.order_id = orders.id
+    JOIN users ON orders.users_id = users.id
+    JOIN items ON items.id = order_items.items_id
     WHERE order_complete = false
     ORDER BY orders.id;`
 
     db.query(query)
       .then(data => {
-        const items = data.rows;
-        res.json({ items });
-        console.log(items)
+        const orders = data.rows;
+        res.json({ orders });
+        console.log(orders)
       })
       .catch(err => {
         res

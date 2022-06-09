@@ -8,8 +8,8 @@
 .orders .box-container .box {
   border: black solid 3.5px;
   padding: 1rem 2rem;
-  height: 1107px;
-  margin-bottom: 100px;
+  height: 600px;
+  margin-bottom: 60px;
 }
 
 .orders .box-container .box p {
@@ -52,13 +52,15 @@
   margin-top: 50px;
   gap: 1rem;
   flex-flow: column;
-  height: 67px;
+  height: 78px;
 }
 
 .order-heading h3 {
-  font-size: 4rem;
+  font-family: "Gochi Hand", cursive;
+  font-size: 60px;
   color: var(--white);
   text-transform: capitalize;
+  margin-top: 15px;
 }
 
 .order-heading p a {
