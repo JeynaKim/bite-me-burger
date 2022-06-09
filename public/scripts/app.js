@@ -9,7 +9,47 @@ const res = require("express/lib/response");
 
 $(() => {
   getAllItems();
+  getAllOrders();
 });
+
+const getAllOrders = () => {
+  $.ajax({
+    url: "/user/orders",
+    type: "GET",
+    success: (result) => {
+      console.log("result:", result);
+      const orders = result.orders;
+      for (const order of orders) {
+        $(".order-items").append(renderOrderItems(order));
+      }
+    },
+    error: (err) => {
+      console.log("error:", err.message);
+    },
+  });
+};
+
+const renderOrderItems = (order) => {
+  console.log(order);
+  const $orderList = `
+            <div class="box-container">
+              <div class="box">
+                <p>placed on : <span>2022-06-08</span></p>
+                <p>name : ${order.user_id}</span>
+                <p>your orders : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
+                <p>total price : <span>$20</span></p>
+                <p>payment method : <span>cash on delivery</span></p>
+                <p>payment status : <span>completed</span></p>
+                <p>order placed : <span>12:35pm</span></p>
+                <p>estimated time left : <span>20 minutes</span></p>
+                <p>completed at : <span></span></p>
+              </div>
+
+              </div>
+            </div>
+            `;
+  return $orderList;
+};
 
 const getAllItems = () => {
   $.ajax({
@@ -28,7 +68,7 @@ const getAllItems = () => {
 };
 
 const renderMenuItems = (item) => {
-  console.log(item);
+  // console.log(item);
   const $itemList = `
   <div class="col-3">
   <div class="items food1">
@@ -38,19 +78,19 @@ const renderMenuItems = (item) => {
   <p>${item.item_description}</p>
   </div>
   <div class="food-card-footer">
+
   <div class="btn-group align-items-center" role="group" aria-label="Basic example">
   <div class="quantity-and-price d-flex flex-row justify-content-between align-items-end">
   <div class="quantity">
-    <input type="number" value="1" min="0" max="100" step="1"/>
+  <input type="number" value="1" min="0" max="100" step="1"/>
   </div>
-  <div class="d-flex align-items-center">
-  <div class="pe-2">
-  <h3 class="mb-0">$${item.price}</h3>
+  <div class="col-3">
+  <h3 class="">$${item.price}</h3>
   </div>
+  <div class="col-1">
   <button class="cards-icon-container btn btn-light">
   <i class="bx bx-cart" type="button" name="select" value="addToCart"></i>
   </button>
-  </div>
   </div>
   </div>
   </div>

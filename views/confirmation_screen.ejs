@@ -20,14 +20,10 @@
   <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
   <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/order.css" type="text/css" />
 
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-
-  <!-- Fontawesom Library-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -38,17 +34,15 @@
   <!-- Fonts Selection -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
     rel="stylesheet">
 </head>
 
 <body>
+
   <!--Top Nav Bar-->
   <div class="header">
     <ul>
@@ -57,27 +51,11 @@
     </ul>
   </div>
 
-  <!-- Navbar content -->
+  <!--Header-->
   <div class="container custom-container">
     <div class="main-header-top">
       <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
       <h2 class="logo-text">Bite Me Burger</h2>
-    </div>
-
-    <!--Menu Category-->
-    <div class="menu-category">
-      <div class="boxes">
-        <div class="box box1">
-          <img src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-            class="category-burger-icon" />
-          <button type="button" class="btn btn-light category-btn">Burger</button>
-        </div>
-
-        <div class="box box2">
-          <img src="https://cdn-icons-png.flaticon.com/512/4329/4329542.png" class="category-drink-icon" />
-          <button type="button" class="btn btn-light category-btn">Drinks</button>
-        </div>
-      </div>
     </div>
 
     <!--Side Bar-->
@@ -155,95 +133,19 @@
       </div>
     </nav>
 
-    <!--Checkout Page - Order Summary-->
-    <div class="heading">
-      <h3>checkout</h3>
+    <!--My Order Section-->
+    <div class="order-heading">
+      <h3>Congratulations, your order has been placed!</h3>
     </div>
 
-    <section class="checkout">
-      <h1 class="title">order summary</h1>
-      <form action="/user/checkout/complete" method="post">
-        <div class="cart-items">
-          <h3><strong><img
-                src="https://icons.veryicon.com/png/o/food--drinks/flat-color-restaurant-icon/hamburger-8.png"
-                class="checkout-burger-logo" />Items in your cart . . .</strong></h3>
-          <p><span class="name">BiteMe Burger x 1</span>
-            <span class="price">$5</span>
-          </p>
-          <p>
-            <span class="name">BiteMe Combo x 2</span>
-            <span class="price">$5</span>
-          </p>
-          <p>
-            <span class="name">Chicken Sandwich x 1</span>
-            <span class="price">$5</span>
-          </p>
-          <p class="grand-total">
-            <span class="name">Order Total :</span>
-            <span class="price">$15</span>
-          </p>
-          <a href="cart.html" class="btn">view cart</a>
-        </div>
 
-        <div class="user-info">
-          <h3>Personal Information</h3>
-          <p><i class="fas fa-user"></i> <span>Jeyna Kim</span></p>
-          <p><i class="fas fa-phone"></i> <span>647-000-0000</span></p>
-          <p>
-            <i class="fas fa-envelope"></i> <span>jeyna.kim@gmail.com</span>
-          </p>
-          <a href="#" class="btn">update info</a>
-          <h3>Delivery Address</h3>
-          <p class="address">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>1234 Lighthouselab Ave, Toronto, ON M2N 0A8</span>
-          </p>
-          <a href="#" class="btn">update address</a>
-          <select name="method" class="box" required>
-            <option value="" disabled selected>select payment method</option>
-            <option value="cash on delivery">cash on delivery</option>
-            <option value="credit card">credit card</option>
-            <option value="paypal">paypal</option>
-          </select>
-        </div>
-        <input type="submit" value="Place Order" name="order" class="btn order-btn" />
-      </form>
-    </section>
-     <!--Footer-->
-     <footer class="footer">
-      <section class="box-container">
-        <div class="box">
-          <i class="fa-solid fa-envelope"></i>
-          <h3>Our Email</h3>
-          <a href="mailto:shaikhanas@gmail.com">bitemebiteme@gmail.com</a>
-        </div>
-
-        <div class="box">
-          <i class="fa-regular fa-clock"></i>
-          <h3>Opening Hours</h3>
-          <p>10:00am - 8:00pm</p>
-        </div>
-
-        <div class="box">
-          <i class="fa-solid fa-location-dot"></i>
-          <h3>Our Address</h3>
-          <a href="https://www.google.com/maps"
-            >1234 BitmeBiteme Ave, Toronto, ON
-          </a>
-        </div>
-
-        <div class="box">
-          <i class='bx bxs-phone-call'></i>
-          <h3>Contact Us!</h3>
-          <a href="tel:1234567890">+647-999-9999</a>
-        </div>
-      </section>
-    </footer>
+  </div>
+  </section>
 </body>
 
 <script>
   const body = document.querySelector("body"),
-    sidebar = body.querySelector(".sidebar"),
+    sidebar = body.querySelector("nav"),
     toggle = body.querySelector(".toggle"),
     searchBtn = body.querySelector(".search-box"),
     modeSwitch = body.querySelector(".toggle-switch"),
