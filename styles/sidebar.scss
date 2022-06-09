@@ -2,7 +2,7 @@
   margin: 0;
   padding: 3px;
   box-sizing: border-box;
-  font-family: "Indie Flower", cursive;
+  font-family: arial;
 }
 
 :root {
@@ -52,7 +52,7 @@ body.dark {
 }
 
 .sidebar.close {
-  width: 88px;
+  width: 97px;
 }
 
 .sidebar-burger-logo {
@@ -76,7 +76,7 @@ body.dark {
 }
 
 .sidebar .icon {
-  min-width: 60px;
+  min-width: 70px;
   border-radius: 6px;
   height: 100%;
   display: flex;
@@ -217,7 +217,7 @@ body.dark .sidebar li a:hover .text {
 }
 
 .sidebar .menu-bar {
-  height: calc(100% - 55px);
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
