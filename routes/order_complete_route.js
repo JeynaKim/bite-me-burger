@@ -9,6 +9,7 @@ module.exports = (db) => {
     let query = `INSERT INTO orders(order_complete) VALUES(true) WHERE orders.id = ${req.body.orders.id};`;
 
     db.query(query);
+    // res.sendStatus(200) ---> HAVE TO RE-DIRECT TO ORDERS PAGE, IF FAILS RES.SENDSTATUS(400);
   })
   return router;
 }

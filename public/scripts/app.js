@@ -1,7 +1,5 @@
 // Client facing scripts here
 
-// const res = require("express/lib/response");
-
 // MAKES REQUEST AND ASSEMBLE THE MENU BASED ON ALL MENU ITEMS FUNCTION //
 // import { allMenuItems }
 
@@ -9,91 +7,82 @@
 
 $(() => {
   getAllItems();
-  getAllOrders();
+  reduceItemQuantity();
+  increaseItemQuantity();
 });
 
-const getAllOrders = () => {
-  $.ajax({
-    url: "/orders",
-    type: "GET",
-    success: (result) => {
-      console.log("result:", result);
-      const orders = result.orders;
-      console.log('orders:', orders)
-      for (const order of orders) {
-        if (order.users_id === 1) {
-        $(".order-items").append(renderOrderItems(order));
-        }
-      }
-    },
-    error: (err) => {
-      console.log("error:", err.message);
-    },
-  });
-};
+const reduceItemQuantity = () => {
+  $('body').on('click', '.reduce-count', function() {
+    let value = $(this).parent().find('.item_quantity')
+    let actualValue = parseInt(value.val());
+    if ( actualValue > 0 ) {
+      value.val(actualValue - 1);
+    }
+  })
+}
 
-const renderOrderItems = (order) => {
-  console.log('order123:', order);
-  const $orderList = `
-            <div class="box-container">
-              <div class="box">
-                <p>Placed on: ${order.created_at} <span></span></p>
-                <p>Your orders: ${order.item_name}  <span></span></p>
-                <p>Total price: $${order.price} </p>
-                <p>Estimated time left: <span></span></p>
-                <p>Completed at: ${order.completed_at} <span></span></p>
-              </div>
-
-              </div>
-            </div>
-            `;
-  return $orderList;
-};
+const increaseItemQuantity = () => {
+  $('body').on('click', '.increase-count', function() {
+    let value = $(this).parent().find('.item_quantity')
+    let actualValue = parseInt(value.val());
+    value.val(actualValue + 1);
+  })
+}
 
 const getAllItems = () => {
-  $.ajax({
-    url: "/user/items",
-    type: "GET",
-    success: (result) => {
+  $.get("/user/items")
+    .then((result) => {
       const items = result.items;
       for (const item of items) {
         $(".choose-order").append(renderMenuItems(item));
       }
-    },
-    error: (err) => {
+    })
+    .then((response) => {
+      $(".cart-add-button").on("click", function () {
+        const itemId = $(this).find(".item_id").val();
+        const itemQuantity = $(this).parent().parent().parent().find(".item_quantity").val();
+        console.log(itemQuantity);
+        localStorage.setItem(itemId, itemQuantity);
+      });
+    })
+    .catch((err) => {
       console.log("ERROR", err.message);
-    },
-  });
+    });
 };
 
 const renderMenuItems = (item) => {
-  // console.log(item);
+
   const $itemList = `
   <div class="col-3">
-  <div class="items food1">
-  <img class="burger-img1" src="../${item.item_photo_url}">
-  <div class="text-center mt-4">
-  <h5 class="text">${item.item_name}</h5>
-  <p>${item.item_description}</p>
-  </div>
-  <div class="food-card-footer">
+    <div class="items food1">
+      <img class="burger-img1" src="../${item.item_photo_url}">
+      <div class="text-center mt-4">
+        <h4 class="text font-weight-bold">${item.item_name}</h4>
+        <p>${item.item_description}</p>
+      </div>
 
-  <div class="btn-group align-items-center" role="group" aria-label="Basic example">
-  <div class="quantity-and-price d-flex flex-row justify-content-between align-items-end">
-  <div class="quantity">
-  <input type="number" value="1" min="0" max="100" step="1"/>
-  </div>
-  <div class="col-3">
-  <h3 class="">$${item.price}</h3>
-  </div>
-  <div class="col-1">
-  <button class="cards-icon-container btn btn-light">
-  <i class="bx bx-cart" type="button" name="select" value="addToCart"></i>
-  </button>
-  </div>
-  </div>
+    <div class="food-card-footer">
+      <div class="quantity d-flex align-item-center">
+        <button class="btn reduce-count"><i class="fa-solid fa-minus"></i></button>
+        <input class="item_quantity" type="number" value="1" min="0" max="100" step="1"/>
+        <button class="btn increase-count"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <div class="d-flex align-items-center">
+        <div>
+          <h5 class="mb-0">$${item.price}</h5>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <div>
+          <button class="cards-icon-container btn btn-light cart-add-button">
+            <input class="item_id" type="hidden" name="item_id" value="${item.id}">
+            <i class="bx bx-cart" type="button" name="select" value="addToCart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
   `;
   return $itemList;
 };
-

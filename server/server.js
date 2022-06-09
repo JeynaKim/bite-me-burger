@@ -57,13 +57,11 @@ app.use("/admin/order", restaurauntOrderRoutes(db))
 app.use("/user/successful_order", addToCart(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
 app.use("/user/view_cart", viewCart(db))
-
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
 app.get("/", (req, res) => {
   res.render("index");
 });
