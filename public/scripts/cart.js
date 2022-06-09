@@ -21,6 +21,7 @@ $(() => {
       `
         <li class="list-group-item list-group-item-primary">Total: $${cartTotal}</li>
       `
+
     );
   })
   .catch((err) => {
