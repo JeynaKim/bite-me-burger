@@ -14,8 +14,6 @@ module.exports = (db) => {
 
     console.log('This is the body:',req.body)
     const {items, user_name,user_email,user_address,user_phone_number} = req.body;
-    //return res.status(500).send(`Test`)
-
 
     const shouldAbort = err => {
       if (err) {
@@ -43,7 +41,7 @@ module.exports = (db) => {
               console.error('Error committing transaction', err.stack)
             }
           })
-          
+
           const lengthOfItem = (JSON.parse(items)).length
           let index = 1
           for (const item of JSON.parse(items)) {
