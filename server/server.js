@@ -42,25 +42,22 @@ const widgetsRoutes = require("../routes/widgets");
 const itemsRoutes = require("../routes/items_route");
 const ordersRoutes = require("../routes/orders_route");
 const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
-const orderPost = require("../routes/order_post.js")
+const addToCart = require("../routes/add_to_cart.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
-const { sendClientConfirmation } = require("./twilio/send_sms")
+const viewCart = require("../routes/view_cart.js")
+const { sendClientConfirmation } = require("./twilio/send_sms");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
-app.use("/user/orders", ordersRoutes(db))
-app.use("/admin/orders", restaurauntOrderRoutes(db))
-// app.use("/user/successful_order", orderPost(db))
+app.use("/user/order", ordersRoutes(db))
+app.use("/admin/order", restaurauntOrderRoutes(db))
+app.use("/user/successful_order", addToCart(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
-//app.use("/user/successful_order", orderPost(db))
-// app.use("/admin/order/complete", orderCompleteRoutes(db, orderID))
-app.use("/user/successful_order", orderPost(db))
-app.use("/admin/order/complete", orderCompleteRoutes(db))
-app.use("/user/successful_order", orderPost(db))
-app.use("/admin/order/complete", orderCompleteRoutes(db))
+app.use("/user/view_cart", viewCart(db))
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -77,7 +74,7 @@ app.get("/orders", (req, res) => {
 
 app.post("/user/checkout/complete", (req, res) => {
   sendClientConfirmation();
-  res.render("confirmation_screen")
+  res.render("confirmation_screen");
 });
 
 app.get("/user/checkout", (req, res) => {
