@@ -1,6 +1,6 @@
 // Client facing scripts here
 
-const res = require("express/lib/response");
+//const res = require("express/lib/response");
 
 // MAKES REQUEST AND ASSEMBLE THE MENU BASED ON ALL MENU ITEMS FUNCTION //
 // import { allMenuItems }
