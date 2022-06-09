@@ -57,11 +57,12 @@
 </head>
 
 <body>
-    <!--Top Nav Bar-->
+  <!--Top Nav Bar-->
   <div class="header">
     <ul>
       <li><a href="#"><i class="bx bxs-user"></i>Profile</a></li>
-      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span class="cart_display_qty">(0)</span></a></li>
+      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span
+            class="cart_display_qty">(0)</span></a></li>
     </ul>
   </div>
 
@@ -120,58 +121,33 @@
       </div>
     </nav>
 
-<!--Incomplete Order Section-->
+    <!--Incomplete Order Section-->
     <div class="order-heading">
       <h3>Incomplete Orders</h3>
     </div>
 
     <section class="orders">
-      <div class="box-container">
-        <div class="box">
-          <p>Order placed : <span>2022-06-08</span></p>
-          <p>Name : <span>Jeyna Kim</span></p>
-          <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-          <p>Total price : <span>$20</span></p>
-          <p>Completed at : <span></span></p>
-        </div>
-      </div>
-     </section>
+      <div class="incomplete-orders"> </div>
+    </section>
+
 
     <!--orders.js: GET our users order information from the database-> -->
     <form action="/admin" class="estimate-time-btn" method="post">
       <input type="number" name="name" required>
-      <input type="submit" value="Estimated-Time For Pickup" class="btn order-btn btn-primary estimate-btn" >
+      <input type="submit" value="Estimated-Time For Pickup" class="btn order-btn btn-primary estimate-btn">
     </form>
 
 
-    <section class="orders">
-      <div class="incomplete-orders">
-
-      <!--My Order Section-->
+    <!--My Order Section-->
     <div class="order-heading">
       <h3>Completed Orders</h3>
     </div>
 
-    <section class="orders">
-      <div class="box-container">
-      <div class="box">
-        <p>Order placed : <span>2022-06-08</span></p>
-        <p>Name : <span>Jeyna Kim</span></p>
-        <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-        <p>Total price : <span>$20</span></p>
-        <p>Completed at : <span></span></p>
-      </div>
 
-      <div class="box">
-        <p>Order placed : <span>2022-06-08</span></p>
-        <p>Name : <span>Jeyna Kim</span></p>
-        <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-        <p>Total price : <span>$20</span></p>
-        <p>Completed at : <span></span></p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="orders">
+      <div class="complete-orders"> </div>
+    </section>
+
 </body>
 
 <script>
@@ -200,4 +176,5 @@
     }
   });
 </script>
+
 </html>

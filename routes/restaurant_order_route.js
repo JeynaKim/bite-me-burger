@@ -11,7 +11,6 @@ module.exports = (db) => {
     JOIN order_items ON order_items.order_id = orders.id
     JOIN users ON orders.users_id = users.id
     JOIN items ON items.id = order_items.items_id
-    WHERE order_complete = false
     ORDER BY orders.id;`
 
     db.query(query)

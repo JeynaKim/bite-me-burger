@@ -70,6 +70,12 @@ app.get("/orders", (req, res) => {
   res.render("orders");
 });
 
+app.post("/orders", (req, res) => {
+  sendClientConfirmation();
+  sendAdminOrder();
+  res.render("orders")
+})
+
 app.get("/admin", (req, res) => {
   res.render("admin");
 });
@@ -77,12 +83,6 @@ app.get("/admin", (req, res) => {
 app.post("/admin", (req, res) => {
   updateClientTime(req.body.name);
   res.render("admin");
-});
-
-app.post("/user/checkout/complete", (req, res) => {
-  sendClientConfirmation();
-  sendAdminOrder();
-  res.render("confirmation_screen");
 });
 
 app.get("/user/checkout", (req, res) => {
