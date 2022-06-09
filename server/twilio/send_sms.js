@@ -24,7 +24,7 @@ function sendAdminOrder() {
 
 function updateClientTime() {
   return client.messages.create({
-    body: `Your order will be ready for pickup in ${}`,
+    body: `Your order will be ready for pickup in `,
     from: twilioPhone,
     to: recipient
   })
