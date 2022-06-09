@@ -4,7 +4,12 @@ const router  = express.Router();
 // Displays all orders, sorts by order ID
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM orders LEFT JOIN order_items ON orders.id = order_items.order_id JOIN items ON order_items.items_id = items.id JOIN users ON users.id = orders.users_id;`
+    let query =
+    `SELECT *
+    FROM orders
+    LEFT JOIN order_items ON orders.id = order_items.order_id
+    JOIN items ON order_items.items_id = items.id
+    JOIN users ON users.id = orders.users_id;`
     console.log('in orders:', query)
     db.query(query)
     .then(data => {

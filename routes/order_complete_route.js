@@ -33,8 +33,9 @@ module.exports = (db) => {
       if (shouldAbort(err)) return
      db.query(query1, [user_name, user_phone_number, user_email], (err, firstResponse) => {
         if (shouldAbort(err)) return
-        console.log(`userID: ${firstResponse.rows[0].id}`)
+        // console.log(`userID: ${firstResponse.rows[0].id}`)
         db.query(query2, [firstResponse.rows[0].id], (err, secondResponse) => {
+          console.log(secondResponse.rows);
           if (shouldAbort(err)) return
           db.query('COMMIT', err => {
             if (err) {
@@ -45,8 +46,8 @@ module.exports = (db) => {
           const lengthOfItem = (JSON.parse(items)).length
           let index = 1
           for (const item of JSON.parse(items)) {
-            console.log({item})
-            console.log("second response:", secondResponse.rows[0].id )
+            // console.log({item})
+            // console.log("second response:", secondResponse.rows[0].id )
             db.query(query3, [item.id, secondResponse.rows[0].id, item.quantity], (err, thirdResponse) => {
               //  console.log(thirdResponse);
               if (shouldAbort(err)) return;

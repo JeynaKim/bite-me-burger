@@ -39,11 +39,22 @@ const getAllItems = () => {
       }
     })
     .then((response) => {
+      // handles cart button event
       $(".cart-add-button").on("click", function () {
         const itemId = $(this).find(".item_id").val();
         const itemQuantity = $(this).parent().parent().parent().find(".item_quantity").val();
-        console.log(itemQuantity);
         localStorage.setItem(itemId, itemQuantity);
+        let cartQuantity = 0;
+        for (const key of Object.keys(localStorage)) {
+          cartQuantity += Number(localStorage.getItem(key));
+        }
+        const cartDisplay = $(".cart_display_qty");
+        cartDisplay.text(cartQuantity);
+        cartDisplay.css("color", "white");
+
+        if (cartQuantity > 0) {
+          cartDisplay.css("color", "red");
+        }
       });
     })
     .catch((err) => {

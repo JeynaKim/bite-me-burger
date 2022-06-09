@@ -5,6 +5,7 @@ $(() => {
     const items = result.items;
     // const
     let cartTotal = 0;
+
     for (const item of items) {
       const quantity = localStorage.getItem(item.id);
       if (quantity > 0) {
@@ -13,8 +14,8 @@ $(() => {
             <li class="list-group-item list-group-item-secondary">${item.item_name} - $${item.price} x ${quantity}</li>
           `
         );
+        cartTotal += Number(item.price * quantity);
       }
-      cartTotal += Number(item.price);
     }
     $(".cart_items").append(
       `
@@ -44,6 +45,7 @@ $(() => {
     console.log(data.items)
     $.post("/admin/order/complete", userInfo + "&items=" + JSON.stringify(items))
     .then(response => {
+      localStorage.clear();
       window.location.replace("/orders");
     })
     .catch(error => {

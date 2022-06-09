@@ -19,6 +19,11 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/sidebar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/choose_order.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/topnav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/footer.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/order.css" type="text/css" />
+
+
 
   <!-- Boxicon Library -->
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -51,18 +56,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
 </head>
 
-
-
 <body>
+    <!--Top Nav Bar-->
+  <div class="header">
+    <ul>
+      <li><a href="#"><i class="bx bxs-user"></i>Profile</a></li>
+      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span class="cart_display_qty">(0)</span></a></li>
+    </ul>
+  </div>
+
   <!--Header-->
   <div class="container custom-container">
     <div class="main-header-top">
       <img src="https://pic.onlinewebfonts.com/svg/img_485179.png" class="burger-logo" />
       <h2 class="logo-text">Bite Me Burger</h2>
     </div>
-
-
-
 
     <!--Side Bar-->
     <nav class="sidebar close">
@@ -77,11 +85,8 @@
         </div>
         <i class="bx bx-chevron-right toggle"></i>
       </header>
-
       <div class="menu-bar">
         <div class="menu">
-
-
           <ul class="menu-links ps-0">
             <li class="nav-link">
               <a href="/admin">
@@ -89,10 +94,6 @@
                 <span class="text nav-text">Orders</span>
               </a>
             </li>
-
-
-
-
           </ul>
         </div>
 
@@ -119,15 +120,58 @@
       </div>
     </nav>
 
-    <!--Incomplete Order Section-->
+<!--Incomplete Order Section-->
     <div class="order-heading">
       <h3>Incomplete Orders</h3>
     </div>
 
     <section class="orders">
+      <div class="box-container">
+        <div class="box">
+          <p>Order placed : <span>2022-06-08</span></p>
+          <p>Name : <span>Jeyna Kim</span></p>
+          <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
+          <p>Total price : <span>$20</span></p>
+          <p>Completed at : <span></span></p>
+        </div>
+      </div>
+     </section>
+
+    <!--orders.js: GET our users order information from the database-> -->
+    <form action="/admin" class="estimate-time-btn" method="post">
+      <input type="number" name="name" required>
+      <input type="submit" value="Estimated-Time For Pickup" class="btn order-btn btn-primary estimate-btn" >
+    </form>
+
+
+    <section class="orders">
       <div class="incomplete-orders">
 
-        <!--orders.js: GET our users order information from the database-> -->
+      <!--My Order Section-->
+    <div class="order-heading">
+      <h3>Completed Orders</h3>
+    </div>
+
+    <section class="orders">
+      <div class="box-container">
+      <div class="box">
+        <p>Order placed : <span>2022-06-08</span></p>
+        <p>Name : <span>Jeyna Kim</span></p>
+        <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
+        <p>Total price : <span>$20</span></p>
+        <p>Completed at : <span></span></p>
+      </div>
+
+      <div class="box">
+        <p>Order placed : <span>2022-06-08</span></p>
+        <p>Name : <span>Jeyna Kim</span></p>
+        <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
+        <p>Total price : <span>$20</span></p>
+        <p>Completed at : <span></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 
 <script>
@@ -156,5 +200,4 @@
     }
   });
 </script>
-
 </html>
