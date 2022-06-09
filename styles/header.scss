@@ -48,6 +48,7 @@
 
 .category-drink-icon {
   width: 111px;
+  margin-left: 15px;
 }
 
 .category-btn {
@@ -57,6 +58,7 @@
   margin-right: 20px;
   margin-left: 20px;
   font-size: 15pt;
+  color: white;
 }
 
 .menu-category-text {
@@ -88,4 +90,9 @@ font-size: 34px;
 
 .card {
 border: 3.5px solid #333533;
+}
+
+
+.btn-light category-btn {
+font-family: "Gochi Hand", cursive;
 }
