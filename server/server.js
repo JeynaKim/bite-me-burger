@@ -41,7 +41,7 @@ const usersRoutes = require("../routes/users");
 const widgetsRoutes = require("../routes/widgets");
 const itemsRoutes = require("../routes/items_route");
 const ordersRoutes = require("../routes/orders_route");
-const restaurauntOrderRoutes = require("../routes/restaurant_order_route.js")
+const restaurauntOrderRoutes = require("../routes/restaurant_order_route")
 const addToCart = require("../routes/add_to_cart.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
 const viewCart = require("../routes/view_cart.js")
@@ -53,7 +53,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
 app.use("/user/orders", ordersRoutes(db))
-app.use("/admin/order", restaurauntOrderRoutes(db))
+app.use("/admin/orders", restaurauntOrderRoutes(db))
 app.use("/user/successful_order", addToCart(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
 app.use("/user/view_cart", viewCart(db))
@@ -70,6 +70,10 @@ app.get("/orders", (req, res) => {
   res.render("orders");
 });
 
+app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+
 app.post("/user/checkout/complete", (req, res) => {
   sendClientConfirmation();
   sendAdminOrder();
@@ -80,9 +84,6 @@ app.get("/user/checkout", (req, res) => {
   res.render("checkout");
 });
 
-app.get("/admin", (req, res) => {
-  res.render("admin");
-});
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
