@@ -30,15 +30,20 @@ $(() => {
   $(".place_order_form").on("submit", function(e) {
     e.preventDefault();
     const userInfo = $(this).serialize();
-    const data = { "user-info": userInfo };
+    const data = { userInfo: userInfo };
     console.log(data);
+    const items = [];
+
     for (const key of Object.keys(localStorage)) {
       const quantity = localStorage.getItem(key);
       if (quantity > 0) {
-        data[key] = localStorage.getItem(key);
+       // data[key] = localStorage.getItem(key);
+       items.push({id: key, quantity:localStorage.getItem(key)})
       }
     }
-    $.post("/admin/order/complete", data)
+    data.items = items
+    console.log(data.items)
+    $.post("/admin/order/complete", userInfo + "&items=" + JSON.stringify(items))
     .then(response => {
       console.log(response);
       window.location.replace("/orders");
