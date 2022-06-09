@@ -78,7 +78,7 @@ const renderMenuItems = (item) => {
     <div class="food-card-footer">
       <div class="quantity d-flex align-item-center">
         <button class="btn reduce-count"><i class="fa-solid fa-minus"></i></button>
-        <input class="item_quantity" type="number" value="1" min="0" max="100" step="1"/>
+        <input class="item_quantity" type="number" value="0" min="0" max="100" step="1"/>
         <button class="btn increase-count"><i class="fa-solid fa-plus"></i></button>
       </div>
       <div class="d-flex align-items-center">
