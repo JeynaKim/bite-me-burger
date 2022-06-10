@@ -42,7 +42,7 @@ const renderOrderItems = (orders) => {
     const totalPrice = orders.reduce((previous, current) => {
       console.log(previous.price, current.price)
 
-      return previous + Number(current.price);
+      return previous + (Number(current.price) * Number(current.quantity));
     }, 0)
     const $orderList = `
   <div class="box">
