@@ -1,6 +1,7 @@
 const express = require('express');
 const { reservationsUrl } = require('twilio/lib/jwt/taskrouter/util');
 const router  = express.Router();
+const { sendClientConfirmation, sendAdminOrder } = require("../server/twilio/send_sms");
 
 // Restaurant marks order as complete
 // res.json omitted since nothing needs to be displayed
@@ -11,6 +12,9 @@ module.exports = (db) => {
     let query1 = `INSERT INTO users(whole_name, phone_number, email) VALUES($1, $2, $3) RETURNING id;`
     let query2 = `INSERT INTO orders(users_id) VALUES($1) RETURNING id`;
     let query3 = `INSERT INTO order_items(items_id, order_id, quantity) VALUES($1, $2, $3);`
+
+    sendClientConfirmation();
+    sendAdminOrder();
 
     console.log('This is the body:',req.body)
     const {items, user_name,user_email,user_address,user_phone_number} = req.body;

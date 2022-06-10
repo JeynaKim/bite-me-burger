@@ -57,11 +57,12 @@
 </head>
 
 <body>
-    <!--Top Nav Bar-->
+  <!--Top Nav Bar-->
   <div class="header">
     <ul>
       <li><a href="#"><i class="bx bxs-user"></i>Profile</a></li>
-      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span class="cart_display_qty">(0)</span></a></li>
+      <li><a href="/user/checkout">My Cart<i class="bx bxs-cart-download"></i><span
+            class="cart_display_qty">(0)</span></a></li>
     </ul>
   </div>
 
@@ -120,58 +121,64 @@
       </div>
     </nav>
 
-<!--Incomplete Order Section-->
+    <!--Incomplete Order Section-->
     <div class="order-heading">
       <h3>Incomplete Orders</h3>
     </div>
 
     <section class="orders">
-      <div class="box-container">
-        <div class="box">
-          <p>Order placed : <span>2022-06-08</span></p>
-          <p>Name : <span>Jeyna Kim</span></p>
-          <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-          <p>Total price : <span>$20</span></p>
-          <p>Completed at : <span></span></p>
-        </div>
-      </div>
-     </section>
+      <div class="incomplete-orders"> </div>
+    </section>
+
 
     <!--orders.js: GET our users order information from the database-> -->
     <form action="/admin" class="estimate-time-btn" method="post">
       <input type="number" name="name" required>
-      <input type="submit" value="Estimated-Time For Pickup" class="btn order-btn btn-primary estimate-btn" >
+      <input type="submit" value="Estimated-Time For Pickup" class="btn order-btn btn-primary estimate-btn">
     </form>
 
+    <img src="https://cdn-icons-png.flaticon.com/512/4698/4698094.png" class="completed-icon">
+    <input type="submit" value="Order Completed" class="btn order-btn btn btn-outline-success completed-btn">
 
-    <section class="orders">
-      <div class="incomplete-orders">
-
-      <!--My Order Section-->
+    <!--My Order Section-->
     <div class="order-heading">
       <h3>Completed Orders</h3>
     </div>
 
-    <section class="orders">
-      <div class="box-container">
-      <div class="box">
-        <p>Order placed : <span>2022-06-08</span></p>
-        <p>Name : <span>Jeyna Kim</span></p>
-        <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-        <p>Total price : <span>$20</span></p>
-        <p>Completed at : <span></span></p>
-      </div>
 
-      <div class="box">
-        <p>Order placed : <span>2022-06-08</span></p>
-        <p>Name : <span>Jeyna Kim</span></p>
-        <p>Customer order : <span>BiteMe Burger (1), Chicken Sandwich (2) </span></p>
-        <p>Total price : <span>$20</span></p>
-        <p>Completed at : <span></span></p>
+    <section class="orders">
+      <div class="complete-orders"> </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+      <section class="box-container">
+        <div class="box">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Our Email</h3>
+          <a href="mailto:shaikhanas@gmail.com">bitemebiteme@gmail.com</a>
         </div>
-      </div>
-    </div>
-  </section>
+
+        <div class="box">
+          <i class="fa-regular fa-clock"></i>
+          <h3>Opening Hours</h3>
+          <p>10:00am - 8:00pm</p>
+        </div>
+
+        <div class="box">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Our Address</h3>
+          <a href="https://www.google.com/maps">1234 BitemeBiteme Ave, Toronto, ON
+          </a>
+        </div>
+
+        <div class="box">
+          <i class='bx bxs-phone-call'></i>
+          <h3>Contact Us!</h3>
+          <a href="tel:1234567890">+647-000-0000</a>
+        </div>
+      </section>
+    </footer>
 </body>
 
 <script>
@@ -200,4 +207,5 @@
     }
   });
 </script>
+
 </html>

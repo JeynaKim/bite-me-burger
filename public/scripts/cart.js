@@ -21,6 +21,7 @@ $(() => {
       `
         <li class="list-group-item list-group-item-primary">Total: $${cartTotal}</li>
       `
+
     );
   })
   .catch((err) => {
@@ -42,7 +43,7 @@ $(() => {
     }
     data.items = items
     console.log(data.items)
-    
+
     $.post("/admin/order/complete", userInfo + "&items=" + JSON.stringify(items))
     .then(response => {
       console.log(response)

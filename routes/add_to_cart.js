@@ -24,9 +24,7 @@ module.exports = (db) => {
             res.send(`Error: ${err}`)
           }
           // release the db back to the pool
-
         })
-
       }
       return !!err
     }
@@ -45,18 +43,11 @@ module.exports = (db) => {
                 console.error('Error committing transaction', err.stack)
               }
               res.json({or})
-
-
             })
-
           })
-
-
         })
       })
     })
-
- // })
   return router;
 }
 

@@ -26,11 +26,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   flex-flow: column;
   height: 80px;
   max-width: 1200px;
   margin: auto;
+  border-radius: 15px 50px;
+  padding: 20px;
 }
 
 .heading h3 {
@@ -66,7 +67,7 @@
 }
 
 .mb-3 {
-  font-size:20px;
+  font-size:25px;
 }
 
 .form-select{

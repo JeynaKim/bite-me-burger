@@ -8,7 +8,7 @@
 .orders .box-container .box {
   border: black solid 3.5px;
   padding: 1rem 2rem;
-  height: 600px;
+  height: 587px;
   margin-bottom: 60px;
 }
 
@@ -50,9 +50,10 @@
   justify-content: center;
   margin-bottom: 55px;
   margin-top: 50px;
-  gap: 1rem;
   flex-flow: column;
   height: 78px;
+  border-radius: 15px 50px;
+  padding: 20px;
 }
 
 .order-heading h3 {
@@ -77,7 +78,6 @@
   color: var(--white);
 }
 
-
 .estimate-time-btn {
   font-size:20px;
   border: 3px solid black;
@@ -85,10 +85,24 @@
   height: 50px;
 }
 
-
 .estimate-btn {
   margin-left: 255px;
   margin-bottom: 200px;
   margin-top: -27px;
   font-size: 20px;
+}
+
+.completed-btn {
+  background: #e92667;
+  color: white;
+  margin-top: 30px;
+  margin-left: 183px;
+  font-size: 20px;
+}
+
+.completed-icon{
+  width: 50px;
+  width: 68px;
+  margin-top: 28px;
+  margin-left: 80px;
 }
