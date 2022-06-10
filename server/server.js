@@ -71,10 +71,10 @@ app.get("/orders", (req, res) => {
 });
 
 app.post("/orders", (req, res) => {
-  sendClientConfirmation();
-  sendAdminOrder();
-  res.render("orders")
-})
+  // sendClientConfirmation();
+  // sendAdminOrder();
+  res.render("orders");
+});
 
 app.get("/admin", (req, res) => {
   res.render("admin");

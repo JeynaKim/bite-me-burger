@@ -17,7 +17,6 @@ const getAllIncompleteOrders = () => {
     success: ({orders}) => {
       // console.log(orders);
       for (const order of orders) {
-// console.log(order)
         if(!order.order_complete) {
         $(".incomplete-orders").append
         (renderIncompleteOrderItems(order));
@@ -31,7 +30,6 @@ const getAllIncompleteOrders = () => {
 };
 
 const renderIncompleteOrderItems = (order) => {
-  console.log(order)
   const $orderList = `
               <section class="orders">
               <div class="box-container">
@@ -56,7 +54,9 @@ const getAllCompleteOrders = () => {
     type: "GET",
     success: (result) => {
       for (const order of result.orders) {
+        if(order.order_complete) {
         $(".complete-orders").append(renderCompleteOrderItems(order));
+        }
       }
     },
     error: (err) => {
