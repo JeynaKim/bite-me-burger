@@ -44,7 +44,8 @@ const ordersRoutes = require("../routes/orders_route");
 const restaurauntOrderRoutes = require("../routes/restaurant_order_route")
 const addToCart = require("../routes/add_to_cart.js")
 const orderCompleteRoutes = require("../routes/order_complete_route")
-const viewCart = require("../routes/view_cart.js")
+const viewCart = require("../routes/view_cart.js");
+const orderComplete = require("../routes/order_complete.js");
 const { sendClientConfirmation, sendAdminOrder, updateClientTime } = require("./twilio/send_sms");
 
 // Mount all resource routes
@@ -54,6 +55,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/user/items", itemsRoutes(db));
 app.use("/user/orders", ordersRoutes(db))
 app.use("/admin/orders", restaurauntOrderRoutes(db))
+app.use("/admin/complete", orderComplete(db))
 app.use("/user/successful_order", addToCart(db))
 app.use("/admin/order/complete", orderCompleteRoutes(db))
 app.use("/user/view_cart", viewCart(db))

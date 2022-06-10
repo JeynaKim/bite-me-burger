@@ -8,6 +8,19 @@
 $(() => {
   getAllIncompleteOrders();
   getAllCompleteOrders();
+  setTimeout(() => {
+    $(".complete_button").on("submit", function(e) {
+      e.preventDefault();
+      const orderId = $(this).serialize();
+      $.post("/admin/complete", orderId)
+      .then(response => {
+        window.location.replace("/admin");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    });
+  }, 500);
 });
 
 const getAllIncompleteOrders = () => {
@@ -17,10 +30,8 @@ const getAllIncompleteOrders = () => {
     success: ({orders}) => {
       // console.log(orders);
       for (const order of orders) {
-        console.log(order);
         if(!order.order_complete) {
-        $(".incomplete-orders").append
-        (renderIncompleteOrderItems(order));
+          $(".incomplete-orders").append(renderIncompleteOrderItems(order));
         }
       }
     },
@@ -35,10 +46,10 @@ const renderIncompleteOrderItems = (order) => {
               <section class="orders">
               <div class="box-container">
                 <div class="box">
-                <p>Customer name: <span>${order.whole_name}</span></p>
+                <p>Customer name: <span>${order.name}</span></p>
                 <p>Customer email: <span>${order.email}</span></p>
                 <p>Customer phone number: <span>${order.phone_number}</span></p>
-                  <p>Customer order: <span> ${order.item_name} </span></p>
+                  <p>Customer order: <span> ${order.items} </span></p>
                   <p>Total price: <span>${order.price}</span></p>
                   <p>Order placed: <span>${order.created_at}</span></p>
                   <p>Estimated time: <span>${order.estimate_time_minute}</span></p>
@@ -48,9 +59,11 @@ const renderIncompleteOrderItems = (order) => {
                     <input type="submit" value="Estimated Time For Pickup" class="btn order-btn btn-primary estimate-btn">
                   </form>
                   <div>
-
+                  <form class="complete_button">
+                    <input type="hidden" name="order_id" value="${order.order_id}">
                     <img src="https://cdn-icons-png.flaticon.com/512/4698/4698094.png" class="completed-icon">
                     <input type="submit" value="Order Completed" class="btn order-btn btn btn-outline-success completed-btn">
+                  </form>
                 </div>
                 </div>
              </section>
@@ -81,10 +94,10 @@ const renderCompleteOrderItems = (order) => {
   <section class="orders">
   <div class="box-container">
     <div class="box">
-    <p>Customer name: <span>${order.whole_name}</span></p>
+    <p>Customer name: <span>${order.name}</span></p>
     <p>Customer email: <span>${order.email}</span></p>
     <p>Customer phone number: <span>${order.phone_number}</span></p>
-      <p>Customer order: <span> ${order.item_name} </span></p>
+      <p>Customer order: <span> ${order.items} </span></p>
       <p>Total price: <span>${order.price}</span></p>
       <p>Order placed: <span>${order.created_at}</span></p>
       <p>Completed at: <span>${order.completed_at}</span></p>

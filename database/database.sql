@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   whole_name VARCHAR(255) NOT NULL,
@@ -5,7 +6,7 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   is_admin BOOLEAN DEFAULT false
 );
-
+DROP TABLE IF EXISTS items CASCADE;
 CREATE TABLE items (
   id SERIAL PRIMARY KEY,
   price DECIMAL(4, 2),
@@ -13,7 +14,7 @@ CREATE TABLE items (
   item_photo_url VARCHAR(255) NOT NULL,
   item_description VARCHAR(955) NOT NULL
 );
-
+DROP TABLE IF EXISTS orders CASCADE;
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   users_id INTEGER,
@@ -26,7 +27,7 @@ CREATE TABLE orders (
   message TEXT,
   FOREIGN KEY (users_id) REFERENCES users(id)
 );
-
+DROP TABLE IF EXISTS order_items CASCADE;
 CREATE TABLE order_items (
   items_id INTEGER,
   order_id INTEGER,
