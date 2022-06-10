@@ -5,23 +5,17 @@ const router = express.Router();
 
 module.exports = (db) => {
 
-  router.get("/", (req, res) => {
+  router.get("/:orderID", (req, res) => {
     console.log("I got here")
+    console.log(`order ID: ${req.params.orderID}`)
 
-    let query = `SELECT * FROM orders
-                JOIN users ON users.id = users_id
-                JOIN order_items ON order_id = orders.id
-                JOIN items ON items.id = items_id
-                ORDER BY users_id DESC LIMIT 1;`
+    let query = `SELECT * FROM order_items JOIN items ON items_id = items.id JOIN orders ON order_id = orders.id JOIN users ON users.id = orders.users_id WHERE order_id = ${req.params.orderID};`
 
 
     db.query(query)
       .then(data => {
         console.log(data.rows)
-        console.log(req.body)
-
-       res.json(data.rows[0])
-      //send({message: "Here are your orders:", orders: data.rows})
+        res.json(data.rows)
       })
       .catch(err => {
         console.log(`Error: ${err}`);

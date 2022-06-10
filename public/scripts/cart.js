@@ -37,16 +37,18 @@ $(() => {
     for (const key of Object.keys(localStorage)) {
       const quantity = localStorage.getItem(key);
       if (quantity > 0) {
-       // data[key] = localStorage.getItem(key);
        items.push({id: key, quantity:localStorage.getItem(key)})
       }
     }
     data.items = items
     console.log(data.items)
+    
     $.post("/admin/order/complete", userInfo + "&items=" + JSON.stringify(items))
     .then(response => {
+      console.log(response)
       localStorage.clear();
-      window.location.replace("/orders");
+      localStorage.setItem(`finalOrderId`, response.orderId)
+     window.location.replace("/orders");
     })
     .catch(error => {
       console.log(error);
