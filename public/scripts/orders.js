@@ -7,6 +7,7 @@
 
 $(() => {
   getAllOrders();
+  localStorage.clear();
 });
 
 const getAllOrders = () => {
@@ -14,7 +15,6 @@ const getAllOrders = () => {
     url: `/user/view_cart/${localStorage.getItem(`finalOrderId`)}`,
     type: "GET",
     success: (result) => {
-<<<<<<< HEAD
       // for (const order of result.orders) {
       // if (order.users_id === 1) {
       console.log(result)
@@ -22,10 +22,6 @@ const getAllOrders = () => {
       renderOrderItems(result);
       // }
       // }
-=======
-      console.log(result)
-        $(".box-container").append(renderOrderItems(result));
->>>>>>> master
     },
     error: (err) => {
       console.log("error:", err.message);
@@ -34,8 +30,7 @@ const getAllOrders = () => {
 };
 
 const renderOrderItems = (orders) => {
-  console.log(orders)
-  const data = order.created_at.split("T");
+  const data = orders[0].created_at.split("T");
   const date = data[0];
   const time = data[1].split('.')[0];
   const { whole_name, email, phone_number, price, created_at } = orders[0];
@@ -55,16 +50,13 @@ const renderOrderItems = (orders) => {
   <p>Email: <span>${email}</span></p>
   <p>Phone number: <span>${phone_number}</span></p>
   <p>Your orders: ${orderInfo}</p>
-
-    <p>Total price: <span>$${totalPrice}</span></p>
-    <p>Order placed: <span>${date + " " + time}</span></p>
-
+  <p>Order placed: <span>${date + " " + time}</span></p>
+  <p>Total price: <span>$${totalPrice}</span></p>
   </div>
 `;
 console.log($orderList)
     $(".box-container").append($orderList);
-
-
-
   return $orderList;
 };
+
+
