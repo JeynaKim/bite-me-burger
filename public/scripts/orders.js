@@ -11,11 +11,21 @@ $(() => {
 
 const getAllOrders = () => {
   $.ajax({
-    url: "/user/view_cart",
+    url: `/user/view_cart/${localStorage.getItem(`finalOrderId`)}`,
     type: "GET",
     success: (result) => {
+<<<<<<< HEAD
+      // for (const order of result.orders) {
+      // if (order.users_id === 1) {
+      console.log(result)
+      //$(".box-container").append(renderOrderItems(result));
+      renderOrderItems(result);
+      // }
+      // }
+=======
       console.log(result)
         $(".box-container").append(renderOrderItems(result));
+>>>>>>> master
     },
     error: (err) => {
       console.log("error:", err.message);
@@ -23,20 +33,38 @@ const getAllOrders = () => {
   });
 };
 
-const renderOrderItems = (order) => {
-  console.log(order);
+const renderOrderItems = (orders) => {
+  console.log(orders)
   const data = order.created_at.split("T");
   const date = data[0];
   const time = data[1].split('.')[0];
-  const $orderList = `
-              <div class="box">
-              <p>Name: <span>${order.whole_name}</span></p>
-              <p>Email: <span>${order.email}</span></p>
-              <p>Phone number: <span>${order.phone_number}</span></p>
-                <p>Your orders: <span> ${order.item_name} </span></p>
-                <p>Total price: <span>${order.price}</span></p>
-                <p>Order placed: <span>${date + " " + time}</span></p>
-              </div>
-            `;
+  const { whole_name, email, phone_number, price, created_at } = orders[0];
+
+  const orderInfo = orders.map((order) => {
+    return ` <span> ${order.item_name} (x ${order.quantity}) </span>`
+
+  })
+    const totalPrice = orders.reduce((previous, current) => {
+      console.log(previous.price, current.price)
+
+      return previous + Number(current.price);
+    }, 0)
+    const $orderList = `
+  <div class="box">
+  <p>Name: <span>${whole_name}</span></p>
+  <p>Email: <span>${email}</span></p>
+  <p>Phone number: <span>${phone_number}</span></p>
+  <p>Your orders: ${orderInfo}</p>
+
+    <p>Total price: <span>$${totalPrice}</span></p>
+    <p>Order placed: <span>${date + " " + time}</span></p>
+
+  </div>
+`;
+console.log($orderList)
+    $(".box-container").append($orderList);
+
+
+
   return $orderList;
 };
