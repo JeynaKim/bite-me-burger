@@ -42,7 +42,6 @@ const renderIncompleteOrderItems = (order) => {
                   <p>Total price: <span>${order.price}</span></p>
                   <p>Order placed: <span>${order.created_at}</span></p>
                   <p>Estimated time: <span>${order.estimate_time_minute}</span></p>
-<div>
                   <form action="/admin" class="estimate-time-btn" method="post">
                     <input type="number" name="name" required>
                     <input type="hidden" name="order_id" value="${order.order_id}">
