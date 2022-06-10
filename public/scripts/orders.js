@@ -35,15 +35,12 @@ const renderOrderItems = (orders) => {
   const time = data[1].split('.')[0];
   const { whole_name, email, phone_number, price, created_at } = orders[0];
 
+  let totalBill = 0;
   const orderInfo = orders.map((order) => {
+    totalBill += order.price * order.quantity;
     return ` <span> ${order.item_name} (x ${order.quantity}) </span>`
 
   })
-    const totalPrice = orders.reduce((previous, current) => {
-      console.log(previous.price, current.price)
-
-      return previous + (Number(current.price) * Number(current.quantity));
-    }, 0)
     const $orderList = `
   <div class="box">
   <p>Name: <span>${whole_name}</span></p>
@@ -51,7 +48,7 @@ const renderOrderItems = (orders) => {
   <p>Phone number: <span>${phone_number}</span></p>
   <p>Your orders: ${orderInfo}</p>
   <p>Order placed: <span>${date + " " + time}</span></p>
-  <p>Total price: <span>$${totalPrice}</span></p>
+  <p>Total price: <span>$${totalBill}</span></p>
   </div>
 `;
 console.log($orderList)

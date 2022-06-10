@@ -92,9 +92,9 @@ const renderCompleteOrderItems = (order) => {
     </div>
   </div>
  </section>
-                </div>
-              </div>
-             </section>
+  </div>
+</div>
+</section>
             `;
   return $orderList;
 };
