@@ -24,7 +24,10 @@ const getAllOrders = () => {
 };
 
 const renderOrderItems = (order) => {
-  console.log(order)
+  console.log(order);
+  const data = order.created_at.split("T");
+  const date = data[0];
+  const time = data[1].split('.')[0];
   const $orderList = `
               <div class="box">
               <p>Name: <span>${order.whole_name}</span></p>
@@ -32,8 +35,7 @@ const renderOrderItems = (order) => {
               <p>Phone number: <span>${order.phone_number}</span></p>
                 <p>Your orders: <span> ${order.item_name} </span></p>
                 <p>Total price: <span>${order.price}</span></p>
-                <p>Order placed: <span>${order.created_at}</span></p>
-
+                <p>Order placed: <span>${date + " " + time}</span></p>
               </div>
             `;
   return $orderList;
