@@ -40,8 +40,19 @@ const renderIncompleteOrderItems = (order) => {
                   <p>Customer order: <span> ${order.item_name} </span></p>
                   <p>Total price: <span>${order.price}</span></p>
                   <p>Order placed: <span>${order.created_at}</span></p>
+                  <p>Estimated time: <span>${order.estimate_time_minute}</span></p>
+<div>
+                  <form action="/admin" class="estimate-time-btn" method="post">
+                    <input type="number" name="name" required>
+                    <input type="hidden" name="order_id" value="${order.order_id}">
+                    <input type="submit" value="Estimated Time For Pickup" class="btn order-btn btn-primary estimate-btn">
+                  </form>
+                  <div>
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/4698/4698094.png" class="completed-icon">
+                    <input type="submit" value="Order Completed" class="btn order-btn btn btn-outline-success completed-btn">
                 </div>
-              </div>
+                </div>
              </section>
             `;
   return $orderList;

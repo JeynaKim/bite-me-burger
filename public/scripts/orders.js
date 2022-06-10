@@ -24,7 +24,7 @@ const getAllOrders = () => {
 };
 
 const renderOrderItems = (order) => {
-  console.log(order)
+  console.log('order321:', order)
   const $orderList = `
               <div class="box">
               <p>Name: <span>${order.whole_name}</span></p>
@@ -33,6 +33,7 @@ const renderOrderItems = (order) => {
                 <p>Your orders: <span> ${order.item_name} </span></p>
                 <p>Total price: <span>${order.price}</span></p>
                 <p>Order placed: <span>${order.created_at}</span></p>
+                <p>Estimated pickup time: <span>${order.estimate_time_minute}</span></p>
 
               </div>
             `;
