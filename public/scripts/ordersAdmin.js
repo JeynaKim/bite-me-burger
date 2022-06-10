@@ -17,6 +17,7 @@ const getAllIncompleteOrders = () => {
     success: ({orders}) => {
       // console.log(orders);
       for (const order of orders) {
+        console.log(order);
         if(!order.order_complete) {
         $(".incomplete-orders").append
         (renderIncompleteOrderItems(order));
@@ -40,7 +41,18 @@ const renderIncompleteOrderItems = (order) => {
                   <p>Customer order: <span> ${order.item_name} </span></p>
                   <p>Total price: <span>${order.price}</span></p>
                   <p>Order placed: <span>${order.created_at}</span></p>
+                  <form action="/admin" class="estimate-time-btn" method="post">
+                  <input type="hidden" name="order_id" value="order.order_id">
+                  <input type="number" name="name" required>
+                  <input type="submit" value="Estimated-Time For Pickup" class="btn order-btn btn-primary estimate-btn">
+                </form>
+                <form action="/admin" class="complete-btn" method="post">
+                <input type="hidden" name="order_id" value="order.order_id">
+                <img src="https://cdn-icons-png.flaticon.com/512/4698/4698094.png" class="completed-icon">
+                <input type="submit" value="Order Completed" class="btn order-btn btn btn-outline-success completed-btn">
+              </form>
                 </div>
+
               </div>
              </section>
             `;
@@ -77,6 +89,7 @@ const renderCompleteOrderItems = (order) => {
       <p>Total price: <span>${order.price}</span></p>
       <p>Order placed: <span>${order.created_at}</span></p>
       <p>Completed at: <span>${order.completed_at}</span></p>
+
     </div>
   </div>
  </section>
