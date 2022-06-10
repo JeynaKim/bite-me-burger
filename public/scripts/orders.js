@@ -14,18 +14,8 @@ const getAllOrders = () => {
     url: `/user/view_cart/${localStorage.getItem(`finalOrderId`)}`,
     type: "GET",
     success: (result) => {
-<<<<<<< HEAD
-      // for (const order of result.orders) {
-      // if (order.users_id === 1) {
-      console.log(result)
-      //$(".box-container").append(renderOrderItems(result));
-      renderOrderItems(result);
-      // }
-      // }
-=======
       console.log(result)
         $(".box-container").append(renderOrderItems(result));
->>>>>>> master
     },
     error: (err) => {
       console.log("error:", err.message);
