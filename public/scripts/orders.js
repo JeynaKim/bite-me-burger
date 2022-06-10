@@ -20,7 +20,7 @@ const getAllOrders = () => {
     error: (err) => {
       console.log("error:", err.message);
     },
-  });
+  }); 
 };
 
 const renderOrderItems = (orders) => {
