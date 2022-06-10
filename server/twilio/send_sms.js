@@ -12,7 +12,6 @@ function sendClientConfirmation() {
   })
 }
 
-
 function sendAdminOrder() {
   return client.messages.create({
     body: `You have a new order for Bite Me Burger. Please login to view the order`,
