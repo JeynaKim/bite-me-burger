@@ -81,8 +81,25 @@ app.get("/admin", (req, res) => {
 });
 
 app.post("/admin", (req, res) => {
+  console.log(`1234heather123`)
+  const estimatedTimeForPickup = req.body.name;
   updateClientTime(req.body.name);
-  res.render("admin");
+  const sqlquery = `
+  UPDATE orders
+  SET estimate_time_minute = $1
+  WHERE id = $2
+  `
+  const sqlvalues = [estimatedTimeForPickup, req.body.order_id];
+  db.query(sqlquery, sqlvalues)
+  .then(data => {
+    console.log('insert successful', data.rows)
+    res.render("admin");
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 });
 
 app.get("/user/checkout", (req, res) => {

@@ -53,7 +53,10 @@ const renderIncompleteOrderItems = (order) => {
                 </form>
                 </div>
 
-              </div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/4698/4698094.png" class="completed-icon">
+                    <input type="submit" value="Order Completed" class="btn order-btn btn btn-outline-success completed-btn">
+                </div>
+                </div>
              </section>
             `;
   return $orderList;
@@ -93,9 +96,9 @@ const renderCompleteOrderItems = (order) => {
     </div>
   </div>
  </section>
-                </div>
-              </div>
-             </section>
+  </div>
+</div>
+</section>
             `;
   return $orderList;
 };
