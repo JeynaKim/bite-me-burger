@@ -17,6 +17,7 @@ const getAllIncompleteOrders = () => {
     success: ({orders}) => {
       // console.log(orders);
       for (const order of orders) {
+        console.log(order);
         if(!order.order_complete) {
         $(".incomplete-orders").append
         (renderIncompleteOrderItems(order));
@@ -88,6 +89,7 @@ const renderCompleteOrderItems = (order) => {
       <p>Total price: <span>${order.price}</span></p>
       <p>Order placed: <span>${order.created_at}</span></p>
       <p>Completed at: <span>${order.completed_at}</span></p>
+
     </div>
   </div>
  </section>
