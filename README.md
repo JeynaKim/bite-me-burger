@@ -16,22 +16,22 @@ _"Bite Me Burger" Project Demo_
 ![Bite-Me-Burger-Demo](https://user-images.githubusercontent.com/100962211/176345778-104dc511-40db-4c91-b151-e22035dbf8cb.gif)
 
 ## Getting Started
-
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information 
-  - username: `labber` 
-  - password: `labber` 
-  - database: `midterm`
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Reset database: `npm run db:reset`
+1. Install dependencies: `npm i`
+2. Fix to binaries for sass: `npm rebuild node-sass`
+3. Reset database: `npm run db:reset`
   - Check the db folder to see what gets created and seeded in the SDB
-7. Run the server: `npm run local`
+4. Run the server: `npm run local`
   - Note: nodemon is used, so you should not have to restart your server
-8. Visit `http://localhost:8080/`
+5. Visit `http://localhost:8080/`
 
 ## Dependencies
+- chalk: ^2.4.2,
+- dotenv: ^2.0.0,
+- ejs: ^2.6.2,
+- express: ^4.17.1,
+- morgan: ^1.9.1,
+- pg: ^8.5.0,
+- sass: ^1.35.1,
+- twilio: ^3.77.2
+- "nodemon": ^2.0.10
 
-- Node 10.x or above
-- NPM 5.x or above
-- PG 6.x
