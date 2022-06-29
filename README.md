@@ -1,4 +1,4 @@
-_"Bite Me Burger Project Demo_
+_"Bite Me Burger" Project Demo_
 
 ![Bite-Me-Burger-Demo](https://user-images.githubusercontent.com/100962211/176345778-104dc511-40db-4c91-b151-e22035dbf8cb.gif)
 
