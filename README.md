@@ -5,15 +5,14 @@
 
 ## Final Product
 
+_"Bite Me Burger" Project Demo_
+![Bite-Me-Burger-Demo](https://user-images.githubusercontent.com/100962211/176345778-104dc511-40db-4c91-b151-e22035dbf8cb.gif)
 _Main Page_
 ![Main](https://user-images.githubusercontent.com/100962211/176346364-2d40aaee-99e1-4bb5-8087-effd1a8f9a5e.png)
 _Check-Out Page_
 ![check-out](https://user-images.githubusercontent.com/100962211/176346397-b2eec2cb-48bb-45bc-b06d-91f40880db3f.png)
 _Incomplete Order(Admin Page)_ 
 ![incomplete-order](https://user-images.githubusercontent.com/100962211/176346408-4e68bd10-f241-45b5-89b5-93b6c630a2f5.png)
-
-_"Bite Me Burger" Project Demo_
-![Bite-Me-Burger-Demo](https://user-images.githubusercontent.com/100962211/176345778-104dc511-40db-4c91-b151-e22035dbf8cb.gif)
 
 ## Getting Started
 1. Install dependencies: `npm i`
